@@ -1,5 +1,31 @@
 .navbar {
-  background-color: red;
+  border: 1px solid red;
   display: flex;
   justify-content: space-between;
+  align-items: end;
+  padding: 0px 0px;
+  background-color: hsla(50.59, 100%, 90%, 1);
+}
+
+.navbar-logo {
+  border: 1px solid blue;
+  max-width: 100%;
+  height: auto;
+}
+
+.navbar-logo img {
+  padding: 5px 5px 0 5px;
+  width: 100px;
+}
+
+.navbar-links {
+  border: 1px solid blue;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.navbar-link {
+  padding: 10px 25px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }

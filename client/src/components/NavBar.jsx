@@ -7,16 +7,16 @@ export default function NavBar() {
   return (
     <>
       <nav className="navbar">
-        <NavLink to="/">
+        <NavLink to="/" className="navbar-logo">
           <img src={Logo} alt="test" />
         </NavLink>
-        <ul>
+        <div className="navbar-links">
           {pages.map((page, index) => (
-            <NavLink key={index} to={`/${page}`}>
+            <NavLink key={index} to={`/${page}`} className="navbar-link">
               {page === "" ? "Home" : page}
             </NavLink>
           ))}
-        </ul>
+        </div>
       </nav>
       <Outlet />
     </>
