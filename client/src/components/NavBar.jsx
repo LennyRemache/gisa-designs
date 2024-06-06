@@ -1,23 +1,31 @@
 import { NavLink, Outlet } from "react-router-dom";
 import Logo from "../assets/gisa-designs-logo.png";
 import "../styles/NavBar.css";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
 export default function NavBar() {
-  const pages = ["", "About", "Contact", "FAQ"];
+  const pages = ["", "About", "Services", "Contact", "FAQ"];
   return (
     <>
-      <nav className="navbar">
-        <NavLink to="/" className="navbar-logo">
-          <img src={Logo} alt="test" />
-        </NavLink>
-        <div className="navbar-links">
-          {pages.map((page, index) => (
-            <NavLink key={index} to={`/${page}`} className="navbar-link">
-              {page === "" ? "Home" : page}
-            </NavLink>
-          ))}
-        </div>
-      </nav>
+      <div className="navbar-parent">
+        <nav className="navbar">
+          <NavLink to="/" className="navbar-logo">
+            <img src={Logo} alt="test" />
+          </NavLink>
+          <div className="navbar-links">
+            {pages.map((page, index) => (
+              <NavLink key={index} to={`/${page}`} className="navbar-link">
+                {page === "" ? "Home" : page}
+              </NavLink>
+            ))}
+          </div>
+          <div className="navbar-socials">
+            <InstagramIcon />
+            <MailOutlineIcon />
+          </div>
+        </nav>
+      </div>
       <Outlet />
     </>
   );
