@@ -1,0 +1,13 @@
+.home-hero {
+  border: 1px solid blue;
+  width: 100%;
+  height: 650px;
+  display: flex;
+}
+
+.home-hero img {
+  transform: scaleX(-1);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
