@@ -6,10 +6,7 @@ export default function Home() {
     <>
       <div className="home-hero">
         <div className="hero-text-parent">HELLO</div>
-        <div className="hero-image-parent">
-          <img src={HeroImage} alt="" />
-          <div className="hero-image-shadow">LOLL</div>
-        </div>
+        <img src={HeroImage} alt="" />
       </div>
     </>
   );
