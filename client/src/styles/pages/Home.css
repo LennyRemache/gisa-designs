@@ -43,7 +43,7 @@
 
 .hero-text-quote {
   border: 1px solid green;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   text-align: center;
   max-width: 600px;
   width: 100%;
@@ -59,4 +59,72 @@
   object-position: center right;
   z-index: -2;
   margin-left: auto;
+}
+
+.seperator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border: 0px solid red;
+  padding: 2rem 0;
+}
+
+.seperator::before,
+.seperator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px solid rgba(215, 214, 214, 0.687);
+}
+
+.seperator::before {
+  margin-left: 3rem;
+  margin-right: 1rem;
+}
+
+.seperator::after {
+  margin-left: 1rem;
+  margin-right: 3rem;
+}
+
+.home-section-1 {
+  border: 0px solid green;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-section-1-desc {
+  text-align: center;
+  font-size: 15px;
+  max-width: 500px;
+  padding: 1.5rem 0;
+}
+
+.home-section-1-photos {
+  display: flex;
+  justify-content: center;
+  padding: 0 0rem;
+  width: 100%;
+}
+
+.home-section-1-photos img {
+  max-width: 400px;
+  width: 100%;
+  max-height: 400px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-section-1-photos img:not(:last-child) {
+  margin-right: 2.5rem;
+}
+.home-section-1-photos img:nth-child(1) {
+  object-position: center;
+}
+.home-section-1-photos img:nth-child(2) {
+  object-position: bottom;
+}
+.home-section-1-photos img:nth-child(3) {
+  object-position: bottom;
 }
