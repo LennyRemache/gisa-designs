@@ -3,6 +3,7 @@ import HeroImage from "../../assets/home-flowers-1.jpg";
 import FlowerDesign1 from "../../assets/flower-design-1.jpeg";
 import FlowerDesign2 from "../../assets/flower-design-2.jpeg";
 import EventDesign1 from "../../assets/event-design-1.jpeg";
+import EventDesign2 from "../../assets/event-design-2.jpeg";
 
 export default function Home() {
   return (
@@ -39,7 +40,19 @@ export default function Home() {
           <img src={EventDesign1} alt="" />
         </div>
       </div>
-      <div>TEST</div>
+      <div className="home-section-2">
+        <img src={EventDesign2} alt="" />
+        <div className="home-section-2-desc">
+          <div className="title">Event Florals</div>
+          <div className="info">
+            Bring your event to life with stunning floral centerpieces! Elevate
+            corporate luncheons, bridal and baby showers, bar/bat mitzvahs, and
+            more. Our designers will work to craft the perfect arrangement to
+            fit your event needs.
+          </div>
+          <div>LEARN MORE</div>
+        </div>
+      </div>
     </>
   );
 }
