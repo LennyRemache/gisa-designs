@@ -6,6 +6,7 @@ import EventDesign1 from "../../assets/event-design-1.jpeg";
 import EventDesign2 from "../../assets/event-design-2.jpeg";
 
 export default function Home() {
+  const section_one = [FlowerDesign1, FlowerDesign2, EventDesign1];
   return (
     <>
       <div className="home-hero">
@@ -35,9 +36,9 @@ export default function Home() {
           for corporate events, weddings, celebrations, and gift baskets.
         </div>
         <div className="home-section-1-photos">
-          <img src={FlowerDesign1} alt="" />
-          <img src={FlowerDesign2} alt="" />
-          <img src={EventDesign1} alt="" />
+          {section_one.map((image) => (
+            <img src={image} alt="" />
+          ))}
         </div>
       </div>
       <div className="home-section-2">

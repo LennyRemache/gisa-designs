@@ -3,6 +3,7 @@ import Logo from "../assets/gisa-designs-logo.png";
 import "../styles/NavBar.css";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import Footer from "./Footer";
 
 export default function NavBar() {
   const pages = ["", "About", "Services", "Contact", "FAQ"];
@@ -27,6 +28,7 @@ export default function NavBar() {
         </nav>
       </div>
       <Outlet />
+      <Footer />
     </>
   );
 }
