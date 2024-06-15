@@ -135,7 +135,6 @@
   border: 0px solid red;
   display: flex;
   justify-content: center;
-  padding: 0 0rem;
   background: rgb(255, 248, 239);
   width: 100%;
   padding: 3rem 2rem;
@@ -151,7 +150,7 @@
 }
 
 .home-section-2-desc {
-  border: 1px solid blue;
+  border: 0px solid blue;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -170,4 +169,49 @@
   word-wrap: break-word;
   font-size: 16px;
   padding: 1rem 0;
+}
+
+.home-section-3 {
+  background: rgb(255, 248, 239);
+  display: flex;
+  justify-content: center;
+  padding: 1rem 2rem 2rem 2rem;
+  border: 0px solid red;
+}
+
+.home-section-3 .sub-container {
+  background-color: white;
+  border: 0px solid purple;
+  display: flex;
+  max-width: 1260px;
+  width: 100%;
+}
+
+.home-section-3-desc {
+  border: 0px solid green;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2rem 0 3rem;
+}
+
+.home-section-3-desc .title {
+  font-size: 2.5rem;
+}
+
+.home-section-3-desc .info {
+  line-height: 25px;
+  word-wrap: break-word;
+  font-size: 16px;
+  padding: 1rem 0;
+}
+
+.home-section-3 .sub-container img {
+  border: 0px solid blue;
+  object-fit: cover;
+  max-width: 600px;
+  width: 100%;
+  margin: 0.5rem 1rem;
+  max-height: 400px;
+  height: 100%;
 }

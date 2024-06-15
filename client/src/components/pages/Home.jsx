@@ -2,6 +2,7 @@ import "../../styles/pages/Home.css";
 import HeroImage from "../../assets/home-flowers-1.jpg";
 import FlowerDesign1 from "../../assets/flower-design-1.jpeg";
 import FlowerDesign2 from "../../assets/flower-design-2.jpeg";
+import FlowerDesign3 from "../../assets/flower-design-3.jpeg";
 import EventDesign1 from "../../assets/event-design-1.jpeg";
 import EventDesign2 from "../../assets/event-design-2.jpeg";
 
@@ -52,6 +53,21 @@ export default function Home() {
             fit your event needs.
           </div>
           <div>LEARN MORE</div>
+        </div>
+      </div>
+      <div className="home-section-3">
+        <div className="sub-container">
+          <div className="home-section-3-desc">
+            <div className="title">Designers Choice</div>
+            <div className="info">
+              Leave it to the experts.
+              <br /> You pick the color palette and our artisans will pick the
+              best, freshest florals available to create a stunning arrangement
+              for you. you.
+            </div>
+            <div>Shop Designer's Choice</div>
+          </div>
+          <img src={FlowerDesign3} alt="" />
         </div>
       </div>
     </>
