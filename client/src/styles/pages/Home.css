@@ -183,7 +183,7 @@
   background-color: white;
   border: 0px solid purple;
   display: flex;
-  max-width: 1260px;
+  max-width: 1250px;
   width: 100%;
 }
 
@@ -193,6 +193,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 0 2rem 0 3rem;
+  width: 50%;
 }
 
 .home-section-3-desc .title {
@@ -209,9 +210,8 @@
 .home-section-3 .sub-container img {
   border: 0px solid blue;
   object-fit: cover;
-  max-width: 600px;
-  width: 100%;
-  margin: 0.5rem 1rem;
+  width: 50%;
   max-height: 400px;
   height: 100%;
+  margin: 0.5rem 1rem;
 }
