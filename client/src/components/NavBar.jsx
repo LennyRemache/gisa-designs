@@ -28,7 +28,7 @@ export default function NavBar() {
         </nav>
       </div>
       <Outlet />
-      <Footer />
+      <Footer pages={pages} />
     </>
   );
 }
