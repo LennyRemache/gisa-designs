@@ -1,0 +1,90 @@
+.faq-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq-hero {
+  background-color: rgb(255, 212, 212);
+  border: 0px solid red;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.faq-container {
+  padding: 0 4rem 0 4rem;
+}
+
+.faq {
+  border: 0px solid blue;
+  display: flex;
+  max-width: 1275px;
+  width: 100%;
+}
+
+.faq-nav {
+  border: 0px solid red;
+  width: 20%;
+  padding: 2rem 0;
+}
+
+.faq-nav ul {
+  list-style-type: none;
+}
+
+.faq-nav ul li a {
+  font-size: 1.25rem;
+}
+
+.faq-questions {
+  border: 0px solid red;
+  width: 80%;
+  padding: 4rem 6rem 2.5rem 6rem;
+}
+
+.section-title {
+  font-size: 2rem;
+}
+
+.service-question,
+.delivery-question,
+.payment-question {
+  font-size: 1.3rem;
+  padding: 1rem 0;
+  list-style-type: none;
+}
+
+.service-answer,
+.delivery-answer,
+.payment-answer {
+  padding-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 2rem;
+}
+
+.delivery-answer-list {
+  font-size: 1.1rem;
+  padding-bottom: 1rem;
+  line-height: 2rem;
+}
+
+.delivery-answer-list-points {
+  list-style-type: disc;
+}
+
+.delivery-answer-list-points li {
+  font-size: 1.1rem;
+  line-height: 2rem;
+}
+
+.delivery-answer-list-points li:not(:last-child) {
+  margin-bottom: 1rem;
+  margin-left: 3rem;
+}
+
+.delivery-answer-list-points li:last-child {
+  margin: 0 0 2rem 3rem;
+}

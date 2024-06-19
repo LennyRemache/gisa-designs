@@ -23,6 +23,12 @@
   width: 75%;
 }
 
+.footer-left img {
+  max-width: 100px;
+  width: 100%;
+  height: auto;
+}
+
 .footer-nav {
   border: 0px solid blue;
   padding: 1rem 0 1rem 0;
