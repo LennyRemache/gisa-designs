@@ -5,10 +5,10 @@ export default function FAQ() {
   return (
     <>
       <div className="faq-parent">
-        <div className="faq-hero">
-          <div>Frequently Asked Questions</div>
-          <div>
-            Can't find what you're looking for?{" "}
+        <div className="faq-header">
+          <div className="faq-header-title">Frequently Asked Questions</div>
+          <div className="faq-header-desc">
+            Can't find what you're looking for?&nbsp;
             <NavLink to="/Contact">Contact Us</NavLink>
           </div>
         </div>
@@ -31,6 +31,14 @@ export default function FAQ() {
               <div id="services">
                 <p className="section-title">Services</p>
                 <ul className="section-questions">
+                  <li className="service-question">
+                    How can I get in touch with you if I have questions?
+                  </li>
+                  <p className="service-answer">
+                    You can reach us through the contact form on our website.
+                    We're here to answer any questions you may have and assist
+                    you throughout the process.
+                  </p>
                   <li className="service-question">
                     What is your process for inquiries?
                   </li>
