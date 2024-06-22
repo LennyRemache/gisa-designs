@@ -1,0 +1,23 @@
+.form-parent {
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.contact-form {
+  border: 1px solid green;
+  display: flex;
+}
+
+.form-details {
+  border: 1px solid blue;
+}
+
+.form-image img {
+  object-fit: cover;
+  max-width: 500px;
+  width: 100%;
+  display: block;
+}
