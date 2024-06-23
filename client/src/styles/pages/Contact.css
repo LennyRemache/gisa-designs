@@ -1,8 +1,6 @@
 .page-parent {
   border: 0px solid red;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  min-height: 100svh;
 }
 
 .contact-header {
@@ -21,6 +19,7 @@
   justify-content: center;
   align-items: center;
   padding: 9rem 0;
+  position: relative;
 }
 
 .contact-header-title {
@@ -34,7 +33,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto;
 }
 
 .contact-form {
@@ -42,7 +40,7 @@
   display: flex;
   max-width: 1275px;
   width: 100%;
-  margin: 0 2rem;
+  margin: 2rem 2rem;
 }
 
 .form-details {
