@@ -45,11 +45,53 @@
 
 .form-details {
   border: 0px solid blue;
-  width: 50%;
+  width: 65%;
+  padding: 2rem;
+}
+
+.name-parent {
+  border: 0px solid red;
+  width: 100%;
+}
+
+.name {
+  border: 0px solid blue;
+  display: flex;
+}
+
+.first-name,
+.last-name {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.email,
+.phone {
+  display: flex;
+  flex-direction: column;
+}
+
+.a-la-carte-menu,
+.lux-picnic,
+.proposal,
+.special-event,
+.flower-arrangement,
+.other {
+  display: flex;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+}
+
+.date input {
+  width: 125px;
 }
 
 .form-image {
-  width: 50%;
+  width: 35%;
 }
 
 .form-image img {
