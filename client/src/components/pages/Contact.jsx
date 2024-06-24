@@ -53,7 +53,7 @@ export default function Contact() {
               </label>
               {services.map((service) => (
                 <div className={service.name}>
-                  <input type="checkbox" name={service.name} id="services" />{" "}
+                  <input type="checkbox" name={service.name} id="services" />
                   <p>{service.title}</p>
                 </div>
               ))}
@@ -63,6 +63,11 @@ export default function Contact() {
                 Event Date or Delivery Date (Exact or Estimated)
               </label>
               <input type="date" />
+            </div>
+            <div className="address">
+              <label htmlFor="address">
+                Delivery Location / Event Location
+              </label>
             </div>
           </div>
           <div className="form-image">

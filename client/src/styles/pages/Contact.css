@@ -45,8 +45,8 @@
 
 .form-details {
   border: 0px solid blue;
-  width: 65%;
-  padding: 2rem;
+  width: 60%;
+  padding: 3rem 3.5rem;
 }
 
 .name-parent {
@@ -54,9 +54,44 @@
   width: 100%;
 }
 
+.name-parent p {
+  margin-bottom: 0.5rem;
+}
+
+.name-parent p,
+.email label,
+.phone label,
+.services label,
+.date label {
+  font-size: 1.1rem;
+}
+
+.email label,
+.phone label,
+.services label,
+.date label {
+  margin-bottom: 0.25rem;
+}
+
+.name-parent,
+.email,
+.phone,
+.services,
+.date {
+  margin-bottom: 1.5rem;
+}
+
 .name {
   border: 0px solid blue;
   display: flex;
+}
+
+.first-name {
+  margin-right: 0.25rem;
+}
+
+.last-name {
+  margin-left: 0.25rem;
 }
 
 .first-name,
@@ -66,10 +101,28 @@
   width: 100%;
 }
 
+.first-name label,
+.last-name label {
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
 .email,
 .phone {
   display: flex;
   flex-direction: column;
+}
+
+.services div:not(:last-child) {
+  margin-top: 0.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.services div input {
+  margin-right: 0.7rem;
+}
+.services div p {
+  font-size: 0.9rem;
 }
 
 .a-la-carte-menu,
@@ -91,7 +144,8 @@
 }
 
 .form-image {
-  width: 35%;
+  width: 40%;
+  max-height: 700px;
 }
 
 .form-image img {
