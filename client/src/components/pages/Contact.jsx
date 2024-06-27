@@ -41,11 +41,11 @@ export default function Contact() {
 
             <div className="email">
               <label htmlFor="email">Email</label>
-              <input type="email" />
+              <input type="email" name="email" />
             </div>
             <div className="phone">
               <label htmlFor="phone">Phone</label>
-              <input type="tel" />
+              <input type="tel" name="phone" />
             </div>
             <div className="services">
               <label htmlFor="services">
@@ -62,12 +62,50 @@ export default function Contact() {
               <label htmlFor="date">
                 Event Date or Delivery Date (Exact or Estimated)
               </label>
-              <input type="date" />
+              <input type="date" name="date" />
             </div>
             <div className="address">
               <label htmlFor="address">
                 Delivery Location / Event Location
               </label>
+              <div className="street-address">
+                <p>Address Line</p>
+                <input
+                  type="text"
+                  name="address-line"
+                  id="address"
+                  autoComplete="street-address"
+                />
+              </div>
+              <div className="city-state-zip">
+                <div>
+                  <p>City</p>
+                  <input
+                    type="text"
+                    name="city"
+                    id="address"
+                    autoComplete="address-level2"
+                  />
+                </div>
+                <div>
+                  <p>State</p>
+                  <input
+                    type="text"
+                    name="state"
+                    id="address"
+                    autoComplete="address-level1"
+                  />
+                </div>
+                <div>
+                  <p>Zip</p>
+                  <input
+                    type="text"
+                    name="zip"
+                    id="address"
+                    autoComplete="postal-code"
+                  />
+                </div>
+              </div>
             </div>
           </div>
           <div className="form-image">

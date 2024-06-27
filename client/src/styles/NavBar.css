@@ -50,3 +50,11 @@
 .navbar-socials {
   margin-top: 10px;
 }
+
+.body-content {
+  border: 10px solid purple;
+  min-height: 100vh;
+}
+
+.footer-content {
+}

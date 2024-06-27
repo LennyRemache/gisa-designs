@@ -1,6 +1,7 @@
 .page-parent {
   border: 0px solid red;
-  min-height: 100svh;
+
+  height: fit-content;
 }
 
 .contact-header {
@@ -62,7 +63,8 @@
 .email label,
 .phone label,
 .services label,
-.date label {
+.date label,
+.address label {
   font-size: 1.1rem;
 }
 
@@ -98,7 +100,7 @@
 .last-name {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 50%;
 }
 
 .first-name label,
@@ -143,6 +145,28 @@
   width: 125px;
 }
 
+.address {
+  border: 0px solid blue;
+}
+.street-address input {
+  width: 100%;
+}
+.city-state-zip {
+  display: flex;
+  border: 0px solid red;
+}
+
+.city-state-zip div {
+  border: 0px solid green;
+  width: 33.3%;
+}
+.city-state-zip div:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.city-state-zip div input {
+  width: 100%;
+}
 .form-image {
   width: 40%;
   max-height: 700px;

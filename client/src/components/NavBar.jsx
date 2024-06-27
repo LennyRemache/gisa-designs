@@ -27,8 +27,12 @@ export default function NavBar() {
           </div>
         </nav>
       </div>
-      <Outlet />
-      <Footer pages={pages} />
+      <div className="body-content">
+        <Outlet />
+      </div>
+      <div className="footer-content">
+        <Footer pages={pages} />
+      </div>
     </>
   );
 }
