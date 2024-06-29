@@ -107,6 +107,28 @@ export default function Contact() {
                 </div>
               </div>
             </div>
+            <div className="budget">
+              <label htmlFor="budget">What is your Budget?</label>
+              <select name="budget">
+                <option disabled selected>
+                  {" "}
+                  -- select an option --{" "}
+                </option>
+                <option>{"< $500"}</option>
+                <option>$500 - $1000</option>
+                <option>$1000 - $1500</option>
+                <option>$1500 - $2000</option>
+                <option>{"> $2000"}</option>
+              </select>
+            </div>
+            <div className="pinterest">
+              <label htmlFor="link">Link to Pinterest</label>
+              <p>
+                ( If your Pinterest Board is private, please invite us
+                @gisadesigns )
+              </p>
+              <input type="url" name="pinterest-link" />
+            </div>
           </div>
           <div className="form-image">
             <img src={ContactImg} alt="" srcset="" />
