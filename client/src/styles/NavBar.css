@@ -52,7 +52,7 @@
 }
 
 .body-content {
-  border: 10px solid purple;
+  border: 0px solid purple;
   min-height: 100vh;
 }
 
