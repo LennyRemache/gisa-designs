@@ -21,26 +21,36 @@ export default function Contact() {
       "a-la-carte-menu": false,
       "lux-picnic": false,
       proposal: false,
-      "specaial-event": false,
+      "special-event": false,
       "flower-arrangement": false,
+      other: false,
     },
     date: "",
     address: "",
     city: "",
     state: "",
     zip: "",
-    budget: "",
+    budget: "-- select an option --",
     link: "",
     message: "",
   };
   const [contactForm, setContactForm] = useState(initialContactForm);
 
   const updateContactForm = (e) => {
-    setContactForm((prevFormState) => ({
-      ...prevFormState,
-      [e.target.name]: e.target.value,
-    }));
-    console.log(contactForm);
+    if (e.target.id === "services") {
+      setContactForm((prevFormState) => ({
+        ...prevFormState,
+        services: {
+          ...prevFormState.services,
+          [e.target.name]: e.target.checked,
+        },
+      }));
+    } else {
+      setContactForm((prevFormState) => ({
+        ...prevFormState,
+        [e.target.name]: e.target.value,
+      }));
+    }
   };
 
   return (
@@ -103,9 +113,15 @@ export default function Contact() {
               <label htmlFor="services">
                 What services are you interested in?
               </label>
-              {services.map((service) => (
-                <div className={service.name}>
-                  <input type="checkbox" name={service.name} id="services" />
+              {services.map((service, index) => (
+                <div className={service.name} key={index}>
+                  <input
+                    type="checkbox"
+                    name={service.name}
+                    id="services"
+                    checked={contactForm.services[service.name]}
+                    onChange={updateContactForm}
+                  />
                   <p>{service.title}</p>
                 </div>
               ))}
@@ -114,7 +130,12 @@ export default function Contact() {
               <label htmlFor="date">
                 Event Date or Delivery Date (Exact or Estimated)
               </label>
-              <input type="date" name="date" value={contactForm.date} />
+              <input
+                type="date"
+                name="date"
+                value={contactForm.date}
+                onChange={updateContactForm}
+              />
             </div>
             <div className="address">
               <p>Delivery Location / Event Location</p>
@@ -163,10 +184,11 @@ export default function Contact() {
             </div>
             <div className="budget">
               <label htmlFor="budget">What is your Budget?</label>
-              <select name="budget">
-                <option disabled selected>
-                  -- select an option --
-                </option>
+              <select
+                name="budget"
+                value={contactForm.budget}
+                onChange={updateContactForm}
+              >
                 <option>{"< $500"}</option>
                 <option>$500 - $1000</option>
                 <option>$1000 - $1500</option>
@@ -180,11 +202,21 @@ export default function Contact() {
                 ( If your Pinterest Board is private, please invite us
                 @gisadesigns )
               </p>
-              <input type="url" name="link" />
+              <input
+                type="url"
+                name="link"
+                value={contactForm.link}
+                onChange={updateContactForm}
+              />
             </div>
             <div className="message">
               <label htmlFor="message">Message</label>
-              <textarea name="message" rows="10"></textarea>
+              <textarea
+                name="message"
+                rows="10"
+                value={contactForm.message}
+                onChange={updateContactForm}
+              ></textarea>
             </div>
           </div>
           <div className="form-image">
