@@ -62,7 +62,8 @@
 .date label,
 .address p,
 .budget label,
-.pinterest label {
+.pinterest label,
+.message label {
   font-size: 1.1rem;
 }
 
@@ -193,6 +194,10 @@
 .message {
   display: flex;
   flex-direction: column;
+}
+
+.message textarea {
+  resize: vertical;
 }
 
 .form-image {

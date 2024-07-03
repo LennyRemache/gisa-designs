@@ -1,0 +1,66 @@
+.about-parent {
+  border: 1px solid blue;
+}
+
+.about-header {
+  z-index: -1;
+  background: rgb(255, 212, 212);
+  background: radial-gradient(
+    circle,
+    rgba(255, 212, 212, 0.7959558823529411) 25%,
+    rgba(255, 212, 212, 0.896796218487395) 50%,
+    rgba(255, 212, 212, 1) 75%
+  );
+  border: 0px solid red;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 0;
+  position: relative;
+}
+
+.about-header-title {
+  border: 0px solid green;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-header p {
+  max-width: 700px;
+  text-align: center;
+  line-height: 2rem;
+  font-size: larger;
+  margin: 0 2rem;
+}
+
+.about-self-images {
+  border: 0px solid red;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: 475px;
+}
+
+.about-self-images div img {
+  object-fit: cover;
+  object-position: bottom;
+  width: 360px;
+  height: 360px;
+  display: block;
+}
+
+.about-self-images div {
+  margin: 0.5rem;
+}
+
+.self-image-1 {
+  display: flex;
+  align-items: start;
+}
+
+.self-image-2 {
+  display: flex;
+  align-items: end;
+}
