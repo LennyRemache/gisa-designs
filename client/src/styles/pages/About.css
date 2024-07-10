@@ -1,5 +1,5 @@
 .about-parent {
-  border: 1px solid blue;
+  border: 0px solid blue;
 }
 
 .about-header {
@@ -65,31 +65,43 @@
   align-items: end;
 }
 .about-section {
-  border: 1px solid blue;
+  border: 0px solid blue;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2rem 0;
 }
 .about-section-1 {
-  border: 1px solid green;
+  border: 0px solid green;
   display: flex;
   align-items: center;
   justify-content: center;
   max-width: 1275px;
+  margin: 0 2rem;
 }
 
 .creative-img {
-  border: 1px solid red;
+  border: 0px solid red;
   width: 50%;
   height: 500px;
-  margin: 2rem;
+  margin: 2rem 1rem 2rem 0;
 }
 
 .creative-desc {
   width: 50%;
-  margin: 2rem;
-  line-height: 1.75rem;
+  margin: 2rem 0;
+  margin: 2rem 0 2rem 1rem;
+  line-height: 2rem;
+}
+
+.creative-desc h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.creative-desc p {
+  font-size: 16px;
 }
 
 .about-section-1 img {
@@ -100,24 +112,34 @@
 }
 
 .about-section-2 {
-  border: 1px solid green;
+  border: 0px solid green;
   display: flex;
   align-items: center;
   justify-content: center;
   max-width: 1275px;
+  margin: 0 2rem;
 }
 
 .cinema-img {
-  border: 1px solid red;
+  border: 0px solid red;
   width: 50%;
   height: 500px;
-  margin: 2rem;
+  margin: 2rem 0 2rem 1rem;
 }
 
 .cinema-desc {
   width: 50%;
-  margin: 2rem;
-  line-height: 1.75rem;
+  margin: 2rem 1rem 2rem 0;
+  line-height: 2rem;
+}
+
+.cinema-desc h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cinema-desc p {
+  font-size: 16px;
 }
 
 .about-section-2 img {

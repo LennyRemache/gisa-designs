@@ -31,7 +31,7 @@ export default function About() {
             <img src={DesignImg} alt="" />
           </div>
           <div className="creative-desc">
-            <h2>Design Obsessed</h2>
+            <h2>Design-Obsessed</h2>
             <p>
               My journey also led me to the art of event design. My creativity
               is rooted in a blend of elegance, passion for eccentric ideas, and
