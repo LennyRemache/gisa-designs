@@ -70,9 +70,8 @@ export default function Home() {
             <div className="title">Designers Choice</div>
             <div className="info">
               Leave it to the experts.
-              <br /> You pick the color palette and our artisans will pick the
-              best, freshest florals available to create a stunning arrangement
-              for you. you.
+              <br /> Our artisans will pick the best, freshest florals available
+              to create a stunning arrangement for you.
             </div>
             <Link className="learn-more-btn">Learn More</Link>
           </div>
