@@ -1,0 +1,46 @@
+.service-header {
+  position: relative;
+  z-index: -1;
+  background: rgb(255, 212, 212);
+  background: radial-gradient(
+    circle,
+    rgba(255, 212, 212, 0.7959558823529411) 25%,
+    rgba(255, 212, 212, 0.896796218487395) 50%,
+    rgba(255, 212, 212, 1) 75%
+  );
+  border: 0px solid red;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+}
+
+.service-header-title {
+  border: 0px solid green;
+  font-size: 2.5rem;
+}
+.service-container {
+  border: 0px solid green;
+  width: 100%;
+  padding: 0 4rem;
+  display: flex;
+  justify-content: center;
+}
+.service-body {
+  border: 0px solid red;
+  max-width: 1275px;
+  width: 100%;
+  display: flex;
+}
+
+.service-nav {
+  border: 1px solid blue;
+  width: 20%;
+  padding: 2rem 0;
+}
+
+.service-nav ul {
+  list-style-type: none;
+}

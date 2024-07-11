@@ -2,22 +2,28 @@ import "../../styles/pages/Services.css";
 import { NavLink, Outlet } from "react-router-dom";
 
 export default function Services() {
+  const sections = ["a-la-carte", "event-florals"];
   return (
     <div>
-      <div className="faq-header">
-        <div className="faq-header-title">Our Services</div>
+      <div className="service-header">
+        <div className="service-header-title">Our Services</div>
       </div>
-      <div className="faq-nav">
-        <ul>
-          <li>
-            <NavLink to="a-la-carte">A La Carte Menu</NavLink>
-          </li>
-          <li>
-            <NavLink to="event-florals">Event Florals</NavLink>
-          </li>
-        </ul>
+      <div className="service-container">
+        <div className="service-body">
+          <div className="service-nav">
+            <ul>
+              {sections.map((section, index) => (
+                <li>
+                  <NavLink key={index} to={`${section}`}>
+                    {section}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <Outlet />
+        </div>
       </div>
-      <Outlet />
     </div>
   );
 }
