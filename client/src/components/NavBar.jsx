@@ -16,7 +16,11 @@ export default function NavBar() {
           </NavLink>
           <div className="navbar-links">
             {pages.map((page, index) => (
-              <NavLink key={index} to={`/${page}`} className="navbar-link">
+              <NavLink
+                key={index}
+                to={page === "Services" ? `/services/a-la-carte` : `/${page}`}
+                className="navbar-link"
+              >
                 {page === "" ? "Home" : page}
               </NavLink>
             ))}
