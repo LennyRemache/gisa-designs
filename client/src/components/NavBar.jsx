@@ -6,7 +6,7 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import Footer from "./Footer";
 
 export default function NavBar() {
-  const pages = ["", "About", "Services", "Contact", "FAQ"];
+  const pages = ["", "Services", "About", "Contact", "FAQ"];
   return (
     <>
       <div className="navbar-parent">
@@ -18,7 +18,7 @@ export default function NavBar() {
             {pages.map((page, index) => (
               <NavLink
                 key={index}
-                to={page === "Services" ? `/services/a-la-carte` : `/${page}`}
+                to={page === "Services" ? `/Services/a-la-carte` : `/${page}`}
                 className="navbar-link"
               >
                 {page === "" ? "Home" : page}
