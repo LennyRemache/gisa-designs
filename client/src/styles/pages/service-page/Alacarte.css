@@ -8,6 +8,12 @@
 .a-la-carte-header {
   border: 1px solid blue;
   margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-wrap: balance;
 }
 
 .carte-items ul {
@@ -17,10 +23,18 @@
 }
 
 .carte-items ul li {
-  border: 1px solid purple;
+  border: 0px solid purple;
   margin: 1rem 1rem;
   list-style-type: none;
   max-width: 400px;
+  background: rgb(255, 212, 212);
+  background: radial-gradient(
+    circle,
+    rgba(255, 212, 212, 0.7959558823529411) 25%,
+    rgba(255, 212, 212, 0.896796218487395) 50%,
+    rgba(255, 212, 212, 1) 75%
+  );
+  border-radius: 15px;
 }
 
 .carte-item-img {
@@ -35,8 +49,23 @@
   height: 100%;
   display: block;
   object-fit: cover;
+  object-position: center;
+  border-radius: 15px 15px 0 0;
 }
 
 .carte-item-desc {
+  text-align: center;
+  text-wrap: balance;
   height: 30%;
+  border: 0px solid red;
+}
+
+.carte-item-desc h2 {
+  font-style: italic;
+  border: 0px solid red;
+  padding: 1rem 0;
+}
+
+.carte-item-desc p {
+  border: 0px solid blue;
 }

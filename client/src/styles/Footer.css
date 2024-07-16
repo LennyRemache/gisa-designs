@@ -1,5 +1,11 @@
 .footer-parent {
-  background-color: rgb(227, 162, 162);
+  background: rgb(255, 212, 212);
+  background: radial-gradient(
+    circle,
+    rgba(255, 212, 212, 0.7959558823529411) 25%,
+    rgba(255, 212, 212, 0.896796218487395) 50%,
+    rgba(255, 212, 212, 1) 75%
+  );
   padding: 3rem 4rem 0 4rem;
 }
 
