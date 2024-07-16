@@ -12,7 +12,11 @@ export default function Footer({ pages }) {
           <img src={Logo} alt="" />
           <div className="footer-nav">
             {pages.map((page, index) => (
-              <NavLink key={index} to={`/${page}`} className="footer-nav-link">
+              <NavLink
+                key={index}
+                to={page === "Services" ? `/Services/a-la-carte` : `/${page}`}
+                className="footer-nav-link"
+              >
                 {page === "" ? "Home" : page}
               </NavLink>
             ))}
