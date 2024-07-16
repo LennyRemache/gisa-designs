@@ -5,7 +5,7 @@ import Option3 from "../../../assets/a-la-carte-item-3.1.jpeg";
 
 export default function Alacarte() {
   return (
-    <div>
+    <div className="a-la-carte-container">
       <div className="a-la-carte-header">
         <h1>A La Carte Menu</h1>
         <p>
@@ -15,7 +15,7 @@ export default function Alacarte() {
         <p>
           While you won't be customizing specific designs or flower choices,
           rest assured that our expertly curated seasonal blooms will bring
-          charm and elegance to your arrangement.Simply pick your preferred
+          charm and elegance to your arrangement. Simply pick your preferred
           color palette, and let us work our magic to create a stunning addition
           to your event.
         </p>

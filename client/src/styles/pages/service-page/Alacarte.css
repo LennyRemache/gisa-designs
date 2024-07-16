@@ -1,13 +1,32 @@
-.carte-items ul li {
+.a-la-carte-container {
+  border: 1px solid red;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.a-la-carte-header {
+  border: 1px solid blue;
+  margin: 0 2rem;
+}
+
+.carte-items ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.carte-items ul li {
   border: 1px solid purple;
-  margin: 2rem 0;
+  margin: 1rem 1rem;
+  list-style-type: none;
+  max-width: 400px;
 }
 
 .carte-item-img {
-  max-width: 400px;
+  max-width: 500px;
   max-height: 400px;
-  width: 50%;
+  height: 70%;
   border: 0px solid blue;
 }
 
@@ -19,5 +38,5 @@
 }
 
 .carte-item-desc {
-  width: 50%;
+  height: 30%;
 }
