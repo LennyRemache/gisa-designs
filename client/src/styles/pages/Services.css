@@ -27,6 +27,8 @@
   padding: 0 4rem;
   display: flex;
   justify-content: center;
+  border: 0px solid green;
+  height: fit-content;
 }
 .service-body {
   border: 0px solid red;
