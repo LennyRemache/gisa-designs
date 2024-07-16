@@ -1,19 +1,25 @@
 .a-la-carte-container {
-  border: 1px solid red;
+  border: 0px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .a-la-carte-header {
-  border: 1px solid blue;
-  margin: 0 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  text-wrap: balance;
+  border: 0px solid blue;
+  margin: 2rem 3rem 0 3rem;
+  background: rgb(255, 248, 239);
+  line-height: 2rem;
+  padding: 2rem;
+}
+
+.a-la-carte-header h1 {
+  font-size: 1.75rem;
+}
+
+.a-la-carte-body {
+  border: 0px solid blue;
+  margin: 2rem 0;
 }
 
 .carte-items ul {
@@ -22,7 +28,7 @@
   justify-content: center;
 }
 
-.carte-items ul li {
+.carte-item {
   border: 0px solid purple;
   margin: 1rem 1rem;
   list-style-type: none;
@@ -34,13 +40,17 @@
     rgba(255, 212, 212, 0.896796218487395) 50%,
     rgba(255, 212, 212, 1) 75%
   );
-  border-radius: 15px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.carte-carousel {
+  border: 0px solid blue;
 }
 
 .carte-item-img {
-  max-width: 500px;
+  max-width: 400px;
   max-height: 400px;
-  height: 70%;
   border: 0px solid blue;
 }
 
@@ -49,15 +59,14 @@
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: center;
-  border-radius: 15px 15px 0 0;
+  object-position: top;
 }
 
 .carte-item-desc {
   text-align: center;
   text-wrap: balance;
-  height: 30%;
   border: 0px solid red;
+  padding: 1rem 2rem 2rem 2rem;
 }
 
 .carte-item-desc h2 {
@@ -68,4 +77,13 @@
 
 .carte-item-desc p {
   border: 0px solid blue;
+}
+.carte-footer {
+  background: rgb(255, 248, 239);
+  border: 0px solid blue;
+  width: 100%;
+  padding: 3rem 4rem;
+  line-height: 2rem;
+  font-style: italic;
+  margin-bottom: 2rem;
 }

@@ -11,8 +11,10 @@ import "slick-carousel/slick/slick-theme.css";
 
 export default function Alacarte() {
   const settings = {
+    arrows: false,
     dots: true,
-    infinite: true,
+    infinite: false,
+    draggable: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -22,12 +24,10 @@ export default function Alacarte() {
     <div className="a-la-carte-container">
       <div className="a-la-carte-header">
         <h1>A La Carte Menu</h1>
-        <br />
         <p>
           Welcome to our A La Carte selection, where nature's beauty meets
           budget-friendly choices!
         </p>
-        <br />
         <p>
           While you won't be customizing specific designs or flower choices,
           rest assured that our expertly curated seasonal blooms will bring
@@ -35,7 +35,6 @@ export default function Alacarte() {
           color palette, and let us work our magic to create a stunning addition
           to your event.
         </p>
-        <br />
         <p>
           Ideal for those seeking both quality and budget-friendly options, our
           a la carte offerings promise a touch of natural splendor without
@@ -45,8 +44,8 @@ export default function Alacarte() {
       <div className="a-la-carte-body">
         <div className="carte-items">
           <ul>
-            <li>
-              <Slider {...settings}>
+            <li className="carte-item">
+              <Slider {...settings} className="carte-carousel">
                 <div className="carte-item-img">
                   <img src={Option1} alt="" srcset="" />
                 </div>
@@ -64,8 +63,8 @@ export default function Alacarte() {
                 </p>
               </div>
             </li>
-            <li>
-              <Slider {...settings}>
+            <li className="carte-item">
+              <Slider {...settings} className="carte-carousel">
                 <div className="carte-item-img">
                   <img src={Option2} alt="" srcset="" />
                 </div>
@@ -81,8 +80,8 @@ export default function Alacarte() {
                 </p>
               </div>
             </li>
-            <li>
-              <Slider {...settings}>
+            <li className="carte-item">
+              <Slider {...settings} className="carte-carousel">
                 <div className="carte-item-img">
                   <img src={Option3} alt="" srcset="" />
                 </div>
@@ -92,7 +91,11 @@ export default function Alacarte() {
               </Slider>
 
               <div className="carte-item-desc">
-                <h2>Bud Vase — $12 (Min. Order of 3 Bud Vases) </h2>
+                <h2>
+                  Bud Vase — $12
+                  <br />
+                  (Min. Order of 3 Bud Vases)
+                </h2>
                 <p>
                   Dainty yet fulfilling design. A mix of Mid-Range to High-Range
                   flowers. Vase is approx. 4-7 inches tall and is a rental.
@@ -102,6 +105,16 @@ export default function Alacarte() {
             </li>
           </ul>
         </div>
+      </div>
+      <div className="carte-footer">
+        <p>
+          Please fill out our Contact Form and indicate your interest in our A
+          La Carte Menu for your event. In our message box specify which items
+          and quantities you are interested in. Additionally, select one of our
+          three color palette options: Neutral & White Color Palette, Romantic
+          Autumn Color Palette, or Designer's Choice.
+        </p>
+        <p>We will reach out to answer any questions and confirm your order.</p>
       </div>
     </div>
   );
