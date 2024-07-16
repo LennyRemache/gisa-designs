@@ -40,7 +40,7 @@
     rgba(255, 212, 212, 0.896796218487395) 50%,
     rgba(255, 212, 212, 1) 75%
   );
-  max-width: 400px;
+  max-width: 500px;
   width: 100%;
 }
 
@@ -49,8 +49,7 @@
 }
 
 .carte-item-img {
-  max-width: 400px;
-  max-height: 400px;
+  max-height: 550px;
   border: 0px solid blue;
 }
 
@@ -59,7 +58,6 @@
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: top;
 }
 
 .carte-item-desc {
