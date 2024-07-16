@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import "../../../styles/pages/service-page/Alacarte.css";
 import Option1 from "../../../assets/a-la-carte-item-1.1.jpeg";
 import Option1_2 from "../../../assets/a-la-carte-item-1.2.jpeg";
@@ -108,11 +110,12 @@ export default function Alacarte() {
       </div>
       <div className="carte-footer">
         <p>
-          Please fill out our Contact Form and indicate your interest in our A
-          La Carte Menu for your event. In our message box specify which items
-          and quantities you are interested in. Additionally, select one of our
-          three color palette options: Neutral & White Color Palette, Romantic
-          Autumn Color Palette, or Designer's Choice.
+          Please fill out our <Link to="/Contact">Contact Form </Link> and
+          indicate your interest in our A La Carte Menu for your event. In our
+          message box specify which items and quantities you are interested in.
+          Additionally, select one of our three color palette options: Neutral &
+          White Color Palette, Romantic Autumn Color Palette, or Designer's
+          Choice.
         </p>
         <p>We will reach out to answer any questions and confirm your order.</p>
       </div>

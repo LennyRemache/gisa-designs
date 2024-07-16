@@ -38,6 +38,8 @@
 .footer-nav {
   border: 0px solid blue;
   padding: 1rem 0 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .footer-nav-link {
