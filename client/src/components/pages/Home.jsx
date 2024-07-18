@@ -73,7 +73,9 @@ export default function Home() {
               <br /> Our artisans will pick the best, freshest florals available
               to create a stunning arrangement for you.
             </div>
-            <Link className="learn-more-btn">Learn More</Link>
+            <Link to="/Services/a-la-carte" className="learn-more-btn">
+              Learn More
+            </Link>
           </div>
           <img src={FlowerDesign3} alt="" />
         </div>
