@@ -61,7 +61,9 @@ export default function Home() {
             more. Our designers will work to craft the perfect arrangement to
             fit your event needs.
           </div>
-          <Link className="learn-more-btn">Learn More</Link>
+          <Link to="/Services/event-florals" className="learn-more-btn">
+            Learn More
+          </Link>
         </div>
       </div>
       <div className="home-section-3">

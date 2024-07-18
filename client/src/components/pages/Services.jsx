@@ -4,6 +4,13 @@ import { Navigate, NavLink, Outlet } from "react-router-dom";
 
 export default function Services() {
   const sections = ["a-la-carte", "event-florals"];
+  const service = (name) => {
+    if (name === "a-la-carte") {
+      return "A La Carte";
+    } else if (name === "event-florals") {
+      return "Events";
+    }
+  };
 
   return (
     <div>
@@ -16,7 +23,7 @@ export default function Services() {
             <ul>
               {sections.map((section, index) => (
                 <li key={index}>
-                  <NavLink to={`${section}`}>{section}</NavLink>
+                  <NavLink to={`${section}`}>{service(section)}</NavLink>
                 </li>
               ))}
             </ul>
