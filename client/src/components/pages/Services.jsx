@@ -3,7 +3,7 @@ import "../../styles/pages/Services.css";
 import { Navigate, NavLink, Outlet } from "react-router-dom";
 
 export default function Services() {
-  const sections = ["a-la-carte", "event-florals"];
+  const sections = ["a-la-carte"];
   const service = (name) => {
     if (name === "a-la-carte") {
       return "A La Carte";
