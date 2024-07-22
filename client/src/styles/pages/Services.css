@@ -1,13 +1,7 @@
 .service-header {
   position: relative;
   z-index: -1;
-  background: rgb(255, 212, 212);
-  background: radial-gradient(
-    circle,
-    rgba(255, 212, 212, 0.7959558823529411) 25%,
-    rgba(255, 212, 212, 0.896796218487395) 50%,
-    rgba(255, 212, 212, 1) 75%
-  );
+  background-color: hsla(51, 100%, 90%, 1);
   border: 0px solid red;
   width: 100%;
   display: flex;
@@ -24,11 +18,12 @@
 .service-container {
   border: 0px solid green;
   width: 100%;
-  padding: 0 4rem;
+  padding: 1.5rem 4rem;
   display: flex;
   justify-content: center;
   border: 0px solid green;
   height: fit-content;
+  background-color: hsla(51, 100%, 90%, 0.7);
 }
 .service-body {
   border: 0px solid red;

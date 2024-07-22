@@ -1,10 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playball&display=swap");
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-size: 14px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Playball", "Kaushan Script", "Roboto", sans-serif;
   text-decoration: none;
+  color: hsla(0, 63%, 18%, 1);
 }

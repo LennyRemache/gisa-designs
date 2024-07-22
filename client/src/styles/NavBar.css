@@ -1,6 +1,6 @@
 .navbar-parent {
   width: 100%;
-  background-color: white;
+  background-color: hsla(51, 100%, 90%, 0.7);
   display: flex;
   justify-content: center;
   padding-top: 5px;

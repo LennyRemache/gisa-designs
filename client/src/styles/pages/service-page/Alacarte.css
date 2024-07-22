@@ -19,7 +19,7 @@
 
 .a-la-carte-body {
   border: 0px solid blue;
-  margin: 2rem 0;
+  margin: 3rem 0;
 }
 
 .carte-items ul {
@@ -33,13 +33,7 @@
   margin: 1rem 1rem;
   list-style-type: none;
   max-width: 400px;
-  background: rgb(255, 212, 212);
-  background: radial-gradient(
-    circle,
-    rgba(255, 212, 212, 0.7959558823529411) 25%,
-    rgba(255, 212, 212, 0.896796218487395) 50%,
-    rgba(255, 212, 212, 1) 75%
-  );
+  background: rgb(255, 248, 239);
   max-width: 300px;
   width: 100%;
 }

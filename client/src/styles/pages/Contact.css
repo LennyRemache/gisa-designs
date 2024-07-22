@@ -6,13 +6,7 @@
 
 .contact-header {
   z-index: -1;
-  background: rgb(255, 212, 212);
-  background: radial-gradient(
-    circle,
-    rgba(255, 212, 212, 0.7959558823529411) 25%,
-    rgba(255, 212, 212, 0.896796218487395) 50%,
-    rgba(255, 212, 212, 1) 75%
-  );
+  background-color: hsla(51, 100%, 90%, 1);
   border: 0px solid red;
   width: 100%;
   display: flex;
@@ -34,6 +28,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: hsla(51, 100%, 90%, 0.7);
 }
 
 .contact-form {
@@ -41,7 +36,8 @@
   display: flex;
   max-width: 1275px;
   width: 100%;
-  margin: 2rem 2rem;
+  margin: 2.5rem 3rem;
+  background: rgb(255, 248, 239);
 }
 
 .form-details {
