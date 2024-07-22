@@ -3,7 +3,7 @@ import "../../styles/pages/Services.css";
 import { Navigate, NavLink, Outlet } from "react-router-dom";
 
 export default function Services() {
-  const sections = ["a-la-carte"];
+  const sections = [];
   const service = (name) => {
     if (name === "a-la-carte") {
       return "A La Carte";
@@ -19,15 +19,19 @@ export default function Services() {
       </div>
       <div className="service-container">
         <div className="service-body">
-          <div className="service-nav">
-            <ul>
-              {sections.map((section, index) => (
-                <li key={index}>
-                  <NavLink to={`${section}`}>{service(section)}</NavLink>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {sections.length ? (
+            <div className="service-nav">
+              <ul>
+                {sections.map((section, index) => (
+                  <li key={index}>
+                    <NavLink to={`${section}`}>{service(section)}</NavLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            ""
+          )}
           <Outlet />
         </div>
       </div>
