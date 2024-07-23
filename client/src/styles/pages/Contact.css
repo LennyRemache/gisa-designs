@@ -27,8 +27,8 @@
   border: 0px solid green;
   display: flex;
   justify-content: center;
-  align-items: center;
   background-color: hsla(51, 100%, 90%, 0.7);
+  min-height: 100vh;
 }
 
 .contact-form {
@@ -38,6 +38,7 @@
   width: 100%;
   margin: 2.5rem 3rem;
   background: rgb(255, 248, 239);
+  height: 100%;
 }
 
 .form-details {

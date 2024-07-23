@@ -44,6 +44,7 @@
   display: flex;
   max-width: 1275px;
   width: 100%;
+  margin: 0 2rem;
 }
 
 .faq-nav {

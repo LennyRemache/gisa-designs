@@ -198,7 +198,7 @@
 }
 
 .home-section-3 .sub-container {
-  background-color: white;
+  background: rgb(255, 248, 239);
   border: 0px solid purple;
   display: flex;
   max-width: 1250px;
