@@ -30,7 +30,6 @@ export default function Contact() {
     city: "",
     state: "",
     zip: "",
-    budget: "-- select an option --",
     link: "",
     message: "",
   };
@@ -53,6 +52,11 @@ export default function Contact() {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(contactForm);
+  };
+
   return (
     <div className="page-parent">
       <div className="contact-header">
@@ -65,7 +69,7 @@ export default function Contact() {
         </p>
       </div>
       <div className="form-parent">
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-details">
             <div className="name-parent">
               <p>Name</p>
@@ -189,6 +193,9 @@ export default function Contact() {
                 value={contactForm.budget}
                 onChange={updateContactForm}
               >
+                <option selected disabled>
+                  -- Select an option --
+                </option>
                 <option>{"< $500"}</option>
                 <option>$500 - $1000</option>
                 <option>$1000 - $1500</option>
@@ -218,6 +225,7 @@ export default function Contact() {
                 onChange={updateContactForm}
               ></textarea>
             </div>
+            <button type="submit">Submit</button>
           </div>
           <div className="form-image">
             <img src={ContactImg} alt="" />
