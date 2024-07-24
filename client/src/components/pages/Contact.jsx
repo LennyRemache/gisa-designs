@@ -51,20 +51,38 @@ export default function Contact() {
     }
   };
 
+  const [errors, setErrors] = useState({});
+
   const validationSchema = Yup.object({
     firstName: Yup.string().required("First Name is Required"),
-    lasttName: Yup.string().required("Last Name is Required"),
+    lastName: Yup.string().required("Last Name is Required"),
     email: Yup.string()
       .required("Email is Required")
       .email("Invalid email format"),
     phone: Yup.string()
       .required("Phone Number is Required")
       .matches(/^\d{10}$/, "Phone Number must be 10 digits"),
+    services: Yup.array()
+      .min(1, "Select at least one service")
+      .required("Select at least one service"),
+    date: Yup.date().required("Date is required"),
+    budget: Yup.string().required("Budget is required"),
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(contactForm);
+    try {
+      await validationSchema.validate(contactForm, { abortEarly: false });
+      console.log("Form submitted", contactForm);
+    } catch (error) {
+      const newError = {};
+      error.inner.forEach((err) => {
+        newError[err.path] = err.message;
+      });
+      console.log(newError);
+      setErrors(newError);
+    }
   };
 
   return (
@@ -92,6 +110,9 @@ export default function Contact() {
                     value={contactForm.firstName}
                     onChange={updateContactForm}
                   />
+                  {errors.firstName && (
+                    <div className="error">{errors.firstName}</div>
+                  )}
                 </div>
                 <div className="last-name">
                   <label htmlFor="lastName">Last Name</label>
@@ -101,6 +122,9 @@ export default function Contact() {
                     value={contactForm.lastName}
                     onChange={updateContactForm}
                   />
+                  {errors.lastName && (
+                    <div className="error">{errors.lastName}</div>
+                  )}
                 </div>
               </div>
             </div>
@@ -113,6 +137,7 @@ export default function Contact() {
                 value={contactForm.email}
                 onChange={updateContactForm}
               />
+              {errors.email && <div className="error">{errors.email}</div>}
             </div>
             <div className="phone">
               <label htmlFor="phone">Phone</label>
@@ -122,11 +147,15 @@ export default function Contact() {
                 value={contactForm.phone}
                 onChange={updateContactForm}
               />
+              {errors.phone && <div className="error">{errors.phone}</div>}
             </div>
             <div className="services">
               <label htmlFor="services">
                 What services are you interested in?
               </label>
+              {errors.services && (
+                <div className="error">{errors.services}</div>
+              )}
               {services.map((service, index) => (
                 <div className={service.name} key={index}>
                   <input
@@ -150,6 +179,7 @@ export default function Contact() {
                 value={contactForm.date}
                 onChange={updateContactForm}
               />
+              {errors.date && <div className="error">{errors.date}</div>}
             </div>
             <div className="address">
               <p>Delivery Location / Event Location</p>
@@ -212,6 +242,7 @@ export default function Contact() {
                 <option>$1500 - $2000</option>
                 <option>{"> $2000"}</option>
               </select>
+              {errors.budget && <div className="error">{errors.budget}</div>}
             </div>
             <div className="pinterest">
               <label htmlFor="link">Link to Pinterest</label>
