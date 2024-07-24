@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ContactImg from "../../assets/contact-us-image.jpeg";
 import "../../styles/pages/Contact.css";
+import * as Yup from "yup";
 
 export default function Contact() {
   const services = [
@@ -17,14 +18,7 @@ export default function Contact() {
     lastName: "",
     email: "",
     phone: "",
-    services: {
-      "a-la-carte-menu": false,
-      "lux-picnic": false,
-      proposal: false,
-      "special-event": false,
-      "flower-arrangement": false,
-      other: false,
-    },
+    services: [],
     date: "",
     address: "",
     city: "",
@@ -37,12 +31,17 @@ export default function Contact() {
 
   const updateContactForm = (e) => {
     if (e.target.id === "services") {
+      let updatedServices = [...contactForm.services];
+      if (e.target.checked === true) {
+        updatedServices.push(e.target.name);
+      } else {
+        updatedServices = updatedServices.filter(
+          (service) => service !== e.target.name
+        );
+      }
       setContactForm((prevFormState) => ({
         ...prevFormState,
-        services: {
-          ...prevFormState.services,
-          [e.target.name]: e.target.checked,
-        },
+        services: updatedServices,
       }));
     } else {
       setContactForm((prevFormState) => ({
@@ -51,6 +50,17 @@ export default function Contact() {
       }));
     }
   };
+
+  const validationSchema = Yup.object({
+    firstName: Yup.string().required("First Name is Required"),
+    lasttName: Yup.string().required("Last Name is Required"),
+    email: Yup.string()
+      .required("Email is Required")
+      .email("Invalid email format"),
+    phone: Yup.string()
+      .required("Phone Number is Required")
+      .matches(/^\d{10}$/, "Phone Number must be 10 digits"),
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -123,7 +133,7 @@ export default function Contact() {
                     type="checkbox"
                     name={service.name}
                     id="services"
-                    checked={contactForm.services[service.name]}
+                    checked={contactForm.services.includes(`${service.name}`)}
                     onChange={updateContactForm}
                   />
                   <p>{service.title}</p>
