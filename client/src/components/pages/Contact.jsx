@@ -27,7 +27,9 @@ export default function Contact() {
     link: "",
     message: "",
   };
+
   const [contactForm, setContactForm] = useState(initialContactForm);
+  const [errors, setErrors] = useState({});
 
   const updateContactForm = (e) => {
     if (e.target.id === "services") {
@@ -50,8 +52,6 @@ export default function Contact() {
       }));
     }
   };
-
-  const [errors, setErrors] = useState({});
 
   const validationSchema = Yup.object({
     firstName: Yup.string().required("First Name is Required"),
@@ -89,7 +89,7 @@ export default function Contact() {
     <div className="page-parent">
       <div className="contact-header">
         <div className="contact-header-title">Contact Us</div>
-        <h1>Let's bring your vision to life!</h1>
+        <p>Let's bring your vision to life!</p>
         <p>
           We're here to collaborate with you every step of the way. Get in touch
           with us today to start blooming ideas together and create an

@@ -22,12 +22,14 @@
   border: 0px solid green;
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
+  letter-spacing: 0.05rem;
 }
 
 .faq-header-desc {
   border: 0px solid blue;
   font-size: 1.1rem;
   margin-top: 1.5rem;
+  letter-spacing: 0.01rem;
 }
 
 .faq-container {
@@ -51,6 +53,7 @@
   border: 0px solid red;
   width: 20%;
   padding: 4rem 0;
+  letter-spacing: 0.05rem;
 }
 
 .faq-nav ul {
@@ -69,6 +72,7 @@
 
 .section-title {
   font-size: 2rem;
+  letter-spacing: 0.05rem;
 }
 
 .service-question,
@@ -77,6 +81,7 @@
   font-size: 1.3rem;
   padding: 1rem 0;
   list-style-type: none;
+  letter-spacing: 0.01rem;
 }
 
 .service-answer,
@@ -85,6 +90,7 @@
   padding-bottom: 2rem;
   font-size: 1.1rem;
   line-height: 2rem;
+  letter-spacing: 0.01rem;
 }
 
 .delivery-answer-list {

@@ -22,7 +22,7 @@ export default function Home() {
       <div className="home-hero">
         <div className="hero-text-parent">
           <div className="hero-text">
-            <div className="hero-text-brand">Gisa Designs</div>
+            <div className="hero-text-brand">GISA DESIGNS</div>
             <div className="hero-text-service">
               Floral Design | Event Design
             </div>
@@ -38,7 +38,7 @@ export default function Home() {
         <img src={HeroImage} alt="Hero-Image" />
       </div>
 
-      <div className="seperator">Luxury Flower Shop in NYC</div>
+      <div className="seperator">Flower Shop in NYC</div>
       <div className="home-section-1">
         <div className="home-section-1-desc">
           Gisa Designs is a premier, family-owned flower shop in NYC offering

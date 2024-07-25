@@ -33,23 +33,27 @@
 
 .hero-text-brand {
   border: 0px solid green;
-  font-size: 5rem;
+  font-size: 4rem;
+  letter-spacing: 0.125rem;
+  margin: 2.75rem 0;
 }
 
 .hero-text-service {
   border: 0px solid green;
-  font-size: 2rem;
+  font-size: 1.75rem;
+  letter-spacing: 0.05rem;
 }
 
 .hero-text-quote {
   border: 0px solid green;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   text-align: center;
   max-width: 800px;
   width: 100%;
   word-wrap: break-word;
   padding: 1.5rem 2rem;
-  font-family: "Marck Script", cursive;
+  letter-spacing: 0.015rem;
+  line-height: 2.5rem;
 }
 
 .home-hero img {
@@ -104,7 +108,7 @@
   font-size: 15px;
   max-width: 500px;
   padding: 1.5rem 0;
-  font-family: "Marck Script", cursive;
+  letter-spacing: 0.025rem;
 }
 
 .home-section-1-photos {
@@ -174,7 +178,7 @@
   word-wrap: break-word;
   font-size: 16px;
   padding: 1rem 0;
-  font-family: "Marck Script", cursive;
+  letter-spacing: 0.025rem;
 }
 
 .learn-more-btn {
@@ -227,7 +231,7 @@
   word-wrap: break-word;
   font-size: 16px;
   padding: 1rem 0;
-  font-family: "Marck Script", cursive;
+  letter-spacing: 0.025rem;
 }
 
 .home-section-3 .sub-container img {

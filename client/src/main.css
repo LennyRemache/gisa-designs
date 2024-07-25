@@ -1,13 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playball&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Marck+Script&display=swap");
+@font-face {
+  font-family: "adobe-caslon-pro";
+  src: url("./fonts/adobe-caslon-pro.ttf");
+}
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-size: 14px;
-  font-family: "Playball", "Roboto", sans-serif;
+  font-family: "adobe-caslon-pro", "Roboto", sans-serif;
+  font-style: italic;
   text-decoration: none;
   color: hsla(0, 63%, 18%, 1);
 }

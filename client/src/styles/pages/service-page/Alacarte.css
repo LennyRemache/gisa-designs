@@ -14,7 +14,14 @@
 }
 
 .a-la-carte-header h1 {
-  font-size: 1.75rem;
+  font-size: 2rem;
+  letter-spacing: 0.05rem;
+  border: 0px solid red;
+  margin-bottom: 1rem;
+}
+
+.a-la-carte-header p {
+  letter-spacing: 0.01rem;
 }
 
 .a-la-carte-body {
@@ -62,13 +69,15 @@
 }
 
 .carte-item-desc h2 {
-  font-style: italic;
   border: 0px solid red;
-  padding: 1rem 0;
+  padding: 1.5rem 0 1rem 0;
+  font-size: 1.15rem;
 }
 
 .carte-item-desc p {
   border: 0px solid blue;
+  line-height: 1.75rem;
+  letter-spacing: 0.02rem;
 }
 .carte-footer {
   background: rgb(255, 248, 239);
@@ -76,6 +85,6 @@
   width: 100%;
   padding: 3rem 4rem;
   line-height: 2rem;
-  font-style: italic;
   margin-bottom: 2rem;
+  letter-spacing: 0.01rem;
 }
