@@ -4,6 +4,8 @@ import "../../styles/pages/Contact.css";
 import * as Yup from "yup";
 
 export default function Contact() {
+  const today = new Date();
+  console.log(today.getDate());
   const services = [
     { title: "A La Carte Menu", name: "a-la-carte-menu" },
     { title: "Luxe Picnic", name: "lux-picnic" },
@@ -53,6 +55,11 @@ export default function Contact() {
     }
   };
 
+  Yup.setLocale({
+    date: {
+      default: "Date is required.",
+    },
+  });
   const validationSchema = Yup.object({
     firstName: Yup.string().required("First Name is Required."),
     lastName: Yup.string().required("Last Name is Required."),
@@ -63,7 +70,14 @@ export default function Contact() {
     services: Yup.array()
       .min(1, "Select at least one service.")
       .required("Select at least one service."),
-    date: Yup.date().required("Date is required."),
+    date: Yup.date()
+      .min(
+        today,
+        `Date must be later than ${
+          today.getMonth() + 1
+        }/${today.getDate()}/${today.getFullYear()}`
+      )
+      .required("Date is required."),
     address: Yup.string().required("Street Address is required."),
     city: Yup.string().required("City is required."),
     state: Yup.string().required("State is required"),

@@ -101,6 +101,7 @@
 }
 
 .first-name {
+  border: 0px solid red;
   margin-right: 0.25rem;
 }
 
@@ -113,6 +114,14 @@
   display: flex;
   flex-direction: column;
   width: 50%;
+}
+
+.first-name input,
+.last-name input,
+.email input,
+.date input,
+.budget select {
+  margin-bottom: 0.25rem;
 }
 
 .first-name label,
