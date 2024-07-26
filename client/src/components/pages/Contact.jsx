@@ -54,19 +54,22 @@ export default function Contact() {
   };
 
   const validationSchema = Yup.object({
-    firstName: Yup.string().required("First Name is Required"),
-    lastName: Yup.string().required("Last Name is Required"),
+    firstName: Yup.string().required("First Name is Required."),
+    lastName: Yup.string().required("Last Name is Required."),
     email: Yup.string()
-      .required("Email is Required")
-      .email("Invalid email format"),
-    phone: Yup.string()
-      .required("Phone Number is Required")
-      .matches(/^\d{10}$/, "Phone Number must be 10 digits"),
+      .required("Email is Required.")
+      .email("Invalid email format."),
+    phone: Yup.string().matches(/^\d{10}$/, "Phone Number must be 10 digits."),
     services: Yup.array()
-      .min(1, "Select at least one service")
-      .required("Select at least one service"),
-    date: Yup.date().required("Date is required"),
-    budget: Yup.string().required("Budget is required"),
+      .min(1, "Select at least one service.")
+      .required("Select at least one service."),
+    date: Yup.date().required("Date is required."),
+    address: Yup.string().required("Street Address is required."),
+    city: Yup.string().required("City is required."),
+    state: Yup.string().required("State is required"),
+    zip: Yup.string().required("Zip is required."),
+    budget: Yup.string().required("Budget is required."),
+    message: Yup.string().required("Message is required."),
   });
 
   const handleSubmit = async (e) => {
@@ -147,7 +150,9 @@ export default function Contact() {
                 value={contactForm.phone}
                 onChange={updateContactForm}
               />
-              {errors.phone && <div className="error">{errors.phone}</div>}
+              {errors.phone && contactForm.phone && (
+                <div className="error">{errors.phone}</div>
+              )}
             </div>
             <div className="services">
               <label htmlFor="services">
@@ -185,6 +190,9 @@ export default function Contact() {
               <p>Delivery Location / Event Location</p>
               <div className="street-address">
                 <label htmlFor="address">Address Line</label>
+                {errors.address && (
+                  <div className="error">{errors.address}</div>
+                )}
                 <input
                   type="text"
                   name="address"
@@ -196,6 +204,7 @@ export default function Contact() {
               <div className="city-state-zip">
                 <div>
                   <label htmlFor="city">City</label>
+                  {errors.city && <div className="error">{errors.city}</div>}
                   <input
                     type="text"
                     name="city"
@@ -206,6 +215,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <label htmlFor="state">State</label>
+                  {errors.state && <div className="error">{errors.state}</div>}
                   <input
                     type="text"
                     name="state"
@@ -216,6 +226,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <label htmlFor="zip">Zip</label>
+                  {errors.zip && <div className="error">{errors.zip}</div>}
                   <input
                     type="text"
                     name="zip"
@@ -259,6 +270,8 @@ export default function Contact() {
             </div>
             <div className="message">
               <label htmlFor="message">Message</label>
+              <p>( Any additional Request or Information? )</p>
+              {errors.message && <div className="error">{errors.message}</div>}
               <textarea
                 name="message"
                 rows="10"
