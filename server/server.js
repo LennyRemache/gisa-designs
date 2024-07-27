@@ -11,6 +11,7 @@ const app = express(); // initiatilzing express server side application
 
 app.use(cors()); // allows to make api calls from the client side
 
+/* ROUTES */
 app.use("/", tempRoute);
 
 app.listen(port, () => {
