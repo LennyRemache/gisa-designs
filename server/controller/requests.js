@@ -1,4 +1,4 @@
-import Request from "../db/models/request.js";
+import { Request } from "../db/models/request.js";
 
 // Receive new customer request info from client-side
 export const request = async (req, res) => {
