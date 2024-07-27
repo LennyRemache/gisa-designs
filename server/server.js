@@ -5,8 +5,6 @@ import { Connect } from "./db/mongoose.js";
 import requestRoutes from "./routes/requests.js";
 dotenv.config();
 
-import tempRoute from "./routes/temp.js";
-
 const port = process.env.PORT || 5001;
 
 const app = express(); // initiatilzing express server side application
