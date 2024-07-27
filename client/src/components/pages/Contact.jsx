@@ -2,10 +2,11 @@ import { useState } from "react";
 import ContactImg from "../../assets/contact-us-image.jpeg";
 import "../../styles/pages/Contact.css";
 import * as Yup from "yup";
+import axios from "axios";
 
 export default function Contact() {
   const today = new Date();
-  console.log(today.getDate());
+
   const services = [
     { title: "A La Carte Menu", name: "a-la-carte-menu" },
     { title: "Luxe Picnic", name: "lux-picnic" },
@@ -88,9 +89,13 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(contactForm);
     try {
       await validationSchema.validate(contactForm, { abortEarly: false });
+      await axios
+        .post("https://gisa-designs.onrender.com/contact/request", contactForm)
+        .catch((err) => {
+          console.log(err.response.data.err);
+        });
       console.log("Form submitted", contactForm);
     } catch (error) {
       const newError = {};
