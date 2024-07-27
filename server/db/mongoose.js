@@ -3,8 +3,8 @@ import mongoose from "mongoose";
 dotenv.config();
 
 // function to connect server side app to our mongoDB database
-export const Connect = () => {
-  mongoose
+export const Connect = async () => {
+  await mongoose
     .connect(process.env.MONGO_URL)
     .then(() => {
       console.log("Connected to MongoDB");
