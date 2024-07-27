@@ -12,10 +12,11 @@ const requestSchema = new mongoose.Schema(
     city: { type: String, default: "" },
     state: { type: String, default: "" },
     zip: { type: String, default: "" },
+    budget: { type: String, default: "" },
     link: { type: String, default: "" },
     message: { type: String, default: "" },
   },
   { timestamps: true }
 );
 
-export default requestSchema;
+export const Request = mongoose.model("Request", requestSchema);
