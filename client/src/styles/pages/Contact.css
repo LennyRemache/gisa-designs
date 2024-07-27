@@ -41,19 +41,23 @@
 }
 
 .contact-form {
-  border: 1px solid green;
+  border: 0px solid green;
   display: flex;
   max-width: 1275px;
   width: 100%;
   margin: 2.5rem 3rem;
   background: rgb(255, 248, 239);
   height: 100%;
+  -webkit-box-shadow: 0px 0px 18px 4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 18px 4px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 18px 4px rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
 }
 
 .form-details {
   border: 0px solid blue;
   width: 55%;
-  padding: 3rem 3.5rem;
+  padding: 2.5rem 3.5rem;
 }
 
 .name-parent {
@@ -133,10 +137,28 @@
   margin-bottom: 0.25rem;
 }
 
+.email-phone {
+  border: 0px solid red;
+  display: flex;
+}
+
+.email {
+  margin-right: 0.25rem;
+  width: 50%;
+}
+
+.phone {
+  margin-left: 0.25rem;
+  width: 50%;
+}
+
 .email,
 .phone {
   display: flex;
   flex-direction: column;
+}
+
+.services {
 }
 
 .services div:not(:last-child) {
@@ -224,4 +246,39 @@
   object-fit: cover;
   width: 100%;
   height: 100%;
+  border-radius: 0 20px 20px 0;
+}
+
+.first-name input,
+.last-name input,
+.email input,
+.phone input,
+.street-address input,
+.city-state-zip div input,
+.pinterest input {
+  border: none;
+  padding: 0.3rem 0.3rem 0 0.3rem;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+}
+
+.date input,
+.message textarea {
+  padding: 0.3rem 0.3rem 0 0.3rem;
+}
+
+.first-name input:focus,
+.last-name input:focus,
+.email input:focus,
+.phone input:focus,
+.street-address input:focus,
+.city-state-zip div input:focus,
+.pinterest input:focus {
+  outline: none;
+  background-color: rgba(128, 128, 128, 0.131);
+}
+
+.budget select {
+  padding: 0.3rem;
+  width: fit-content;
 }

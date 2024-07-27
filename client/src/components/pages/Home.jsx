@@ -61,7 +61,7 @@ export default function Home() {
             more. Our designers will work to craft the perfect arrangement to
             fit your event needs.
           </div>
-          <Link to="/Services/event-florals" className="learn-more-btn">
+          <Link to="/Services/a-la-carte" className="learn-more-btn">
             Learn More
           </Link>
         </div>

@@ -145,29 +145,31 @@ export default function Contact() {
                 </div>
               </div>
             </div>
+            <div className="email-phone">
+              <div className="email">
+                <label htmlFor="email">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={contactForm.email}
+                  onChange={updateContactForm}
+                />
+                {errors.email && <div className="error">{errors.email}</div>}
+              </div>
+              <div className="phone">
+                <label htmlFor="phone">Phone</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={contactForm.phone}
+                  onChange={updateContactForm}
+                />
+                {errors.phone && contactForm.phone && (
+                  <div className="error">{errors.phone}</div>
+                )}
+              </div>
+            </div>
 
-            <div className="email">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                name="email"
-                value={contactForm.email}
-                onChange={updateContactForm}
-              />
-              {errors.email && <div className="error">{errors.email}</div>}
-            </div>
-            <div className="phone">
-              <label htmlFor="phone">Phone</label>
-              <input
-                type="tel"
-                name="phone"
-                value={contactForm.phone}
-                onChange={updateContactForm}
-              />
-              {errors.phone && contactForm.phone && (
-                <div className="error">{errors.phone}</div>
-              )}
-            </div>
             <div className="services">
               <label htmlFor="services">
                 What services are you interested in?
@@ -288,7 +290,7 @@ export default function Contact() {
               {errors.message && <div className="error">{errors.message}</div>}
               <textarea
                 name="message"
-                rows="10"
+                rows="5"
                 value={contactForm.message}
                 onChange={updateContactForm}
               ></textarea>
