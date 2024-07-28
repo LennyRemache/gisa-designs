@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import { Connect } from "./db/mongoose.js";
-import requestRoutes from "./routes/requests.js";
+import orderRoutes from "./routes/orders.js";
 dotenv.config();
 
 const port = process.env.PORT || 5001;
@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cors()); // allows to make api calls from the client side
 
 /* ROUTES */
-app.use("/contact", requestRoutes);
+app.use("/order", orderRoutes);
 
 app.listen(port, () => {
   console.log(`Server started successfully on port : ${port}`);

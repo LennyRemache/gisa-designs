@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
 
-const requestSchema = new mongoose.Schema(
+const orderSchema = new mongoose.Schema(
   {
     firstName: { type: String, default: "" },
     lastName: { type: String, default: "" },
@@ -18,8 +18,8 @@ const requestSchema = new mongoose.Schema(
     link: { type: String, default: "" },
     message: { type: String, default: "" },
   },
-  { collection: "request", timestamps: true }
+  { timestamps: true }
 );
 
 const connection = mongoose.createConnection(`${process.env.MONGO_URL}/orders`);
-export const Request = connection.model("Request", requestSchema);
+export const Order = connection.model("Request", orderSchema);

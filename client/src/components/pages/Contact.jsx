@@ -56,11 +56,6 @@ export default function Contact() {
     }
   };
 
-  Yup.setLocale({
-    date: {
-      default: "Date is required.",
-    },
-  });
   const validationSchema = Yup.object({
     firstName: Yup.string().required("First Name is Required."),
     lastName: Yup.string().required("Last Name is Required."),
@@ -92,7 +87,7 @@ export default function Contact() {
     try {
       await validationSchema.validate(contactForm, { abortEarly: false });
       await axios
-        .post("https://gisa-designs.onrender.com/contact/request", contactForm)
+        .post("https://gisa-designs.onrender.com/order/request", contactForm)
         .catch((err) => {
           console.log(err.response.data.err);
         });

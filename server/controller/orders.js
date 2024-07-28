@@ -1,4 +1,4 @@
-import { Request } from "../db/models/request.js";
+import { Order } from "../db/models/order.js";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 dotenv.config();
@@ -23,7 +23,7 @@ export const request = async (req, res) => {
     } = req.body;
 
     // using the created Request db model we now can use client-side info to create a new request object with the given info
-    const newRequest = new Request({
+    const newOrder = new Order({
       firstName,
       lastName,
       email,
@@ -39,7 +39,7 @@ export const request = async (req, res) => {
       message,
     });
 
-    const savedRequest = await newRequest.save(); // save the new request into the DB;
+    const savedOrder = await newOrder.save(); // save the new request into the DB;
     const transporter = nodemailer.createTransport({
       service: "gmail", // Use your email provider
       host: "smtp.gmail.com",
@@ -51,10 +51,10 @@ export const request = async (req, res) => {
       },
     });
     const mailOptions = {
-      replyTo: savedRequest.email,
+      replyTo: savedOrder.email,
       from: "lenny.j.remache@gmail.com",
       to: "lenny.j.remache@gmail.com",
-      subject: `Order Request #${savedRequest._id}`,
+      subject: `Order Request #${savedOrder._id}`,
       text: "This is a test email sent from a Node.js app!",
     };
 
@@ -66,7 +66,7 @@ export const request = async (req, res) => {
       }
     });
 
-    res.status(201).json(savedRequest); // signal that request has be received successfully
+    res.status(201).json(savedOrder); // signal that request has be received successfully
   } catch (err) {
     res.status(400).json({ err: err.message });
   }
