@@ -38,7 +38,7 @@ export default function Contact() {
     if (e.target.id === "services") {
       let updatedServices = [...contactForm.services];
       if (e.target.checked === true) {
-        updatedServices.push(e.target.name);
+        updatedServices.push(e.target.value);
       } else {
         updatedServices = updatedServices.filter(
           (service) => service !== e.target.name
