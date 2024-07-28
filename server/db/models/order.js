@@ -21,5 +21,7 @@ const orderSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const connection = mongoose.createConnection(`${process.env.MONGO_URL}/orders`);
+const connection = mongoose.createConnection(
+  `${process.env.MONGO_URL}/orders?retryWrites=true&w=majority`
+);
 export const Order = connection.model("Request", orderSchema);
