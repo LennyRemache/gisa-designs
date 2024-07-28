@@ -18,7 +18,7 @@ const requestSchema = new mongoose.Schema(
     link: { type: String, default: "" },
     message: { type: String, default: "" },
   },
-  { timestamps: true }
+  { collection: "request", timestamps: true }
 );
 
 const connection = mongoose.createConnection(`${process.env.MONGO_URL}/orders`);
