@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Collection } from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -18,7 +18,7 @@ const orderSchema = new mongoose.Schema(
     link: { type: String, default: "" },
     message: { type: String, default: "" },
   },
-  { timestamps: true }
+  { collection: "request", timestamps: true }
 );
 
 export const Order = mongoose.model("Request", orderSchema);
