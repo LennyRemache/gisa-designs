@@ -183,7 +183,7 @@ export default function Contact() {
                     type="checkbox"
                     name={service.name}
                     id="services"
-                    checked={contactForm.services.includes(`${service.name}`)}
+                    checked={contactForm.services.includes(`${service.title}`)}
                     onChange={updateContactForm}
                   />
                   <p>{service.title}</p>
