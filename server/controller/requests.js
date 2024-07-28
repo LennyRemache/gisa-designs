@@ -51,7 +51,7 @@ export const request = async (req, res) => {
       },
     });
     const mailOptions = {
-      replyTo: email,
+      replyTo: savedRequest.email,
       from: "lenny.j.remache@gmail.com",
       to: "lenny.j.remache@gmail.com",
       subject: `Order Request #${savedRequest._id}`,

@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
 const requestSchema = new mongoose.Schema(
   {
@@ -19,4 +21,5 @@ const requestSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export const Request = mongoose.model("Request", requestSchema);
+const connection = mongoose.createConnection(`${process.env.MONGO_URL}/orders`);
+export const Request = connection.model("Request", requestSchema);
