@@ -64,7 +64,6 @@ export const request = async (req, res) => {
     });
 
     res.status(201).json(savedRequest); // signal that request has be received successfully
-    res.redirect("/");
   } catch (err) {
     res.status(400).json({ err: err.message });
   }
