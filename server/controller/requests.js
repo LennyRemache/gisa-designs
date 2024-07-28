@@ -40,12 +40,11 @@ export const request = async (req, res) => {
     });
 
     const savedRequest = await newRequest.save(); // save the new request into the DB
-
+    l;
     const transporter = nodemailer.createTransport({
-      service: "Gmail", // Use your email provider
+      service: "gmail", // Use your email provider
       host: "smtp.gmail.com",
       port: 465,
-      secure: true,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
@@ -58,7 +57,8 @@ export const request = async (req, res) => {
       subject: `Order Request #${savedRequest._id}`,
       text: "This is a test email sent from a Node.js app!",
     };
-    await transporter.sendMail(mailOptions, function (error, info) {
+
+    transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
         console.log(error);
       } else {
