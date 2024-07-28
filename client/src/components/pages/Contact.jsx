@@ -38,10 +38,10 @@ export default function Contact() {
     if (e.target.id === "services") {
       let updatedServices = [...contactForm.services];
       if (e.target.checked === true) {
-        updatedServices.push(e.target.defaultValue);
+        updatedServices.push(e.target.name);
       } else {
         updatedServices = updatedServices.filter(
-          (service) => service !== e.target.defaultValue
+          (service) => service !== e.target.name
         );
       }
       setContactForm((prevFormState) => ({
@@ -87,7 +87,7 @@ export default function Contact() {
     try {
       await validationSchema.validate(contactForm, { abortEarly: false });
       await axios
-        .post("https://gisa-designs.onrender.com/order/request", contactForm)
+        .post("https://gisa-designs.onrender.com/contact/request", contactForm)
         .catch((err) => {
           console.log(err.response.data.err);
         });
@@ -183,7 +183,7 @@ export default function Contact() {
                     type="checkbox"
                     name={service.name}
                     id="services"
-                    checked={contactForm.services.includes(`${service.title}`)}
+                    checked={contactForm.services.includes(`${service.name}`)}
                     onChange={updateContactForm}
                   />
                   <p>{service.title}</p>
