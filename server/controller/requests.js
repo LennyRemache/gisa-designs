@@ -39,8 +39,7 @@ export const request = async (req, res) => {
       message,
     });
 
-    const savedRequest = await newRequest.save(); // save the new request into the DB
-    l;
+    const savedRequest = await newRequest.save(); // save the new request into the DB;
     const transporter = nodemailer.createTransport({
       service: "Gmail", // Use your email provider
       host: "smtp.gmail.com",
