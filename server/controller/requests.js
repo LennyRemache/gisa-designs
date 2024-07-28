@@ -42,7 +42,7 @@ export const request = async (req, res) => {
     const savedRequest = await newRequest.save(); // save the new request into the DB
     l;
     const transporter = nodemailer.createTransport({
-      service: "gmail", // Use your email provider
+      service: "Gmail", // Use your email provider
       host: "smtp.gmail.com",
       port: 465,
       auth: {
