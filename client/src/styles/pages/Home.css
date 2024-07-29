@@ -282,10 +282,9 @@
   width: 100%;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1110px) {
   .hero-text-brand {
     font-size: 2.5rem;
-    margin-bottom: 1.5rem;
   }
 
   .hero-text-service {
@@ -298,6 +297,9 @@
     padding: 1.5rem;
     line-height: 1.5rem;
   }
+}
+
+@media only screen and (max-width: 1024px) {
   .seperator {
     border: 0px solid red;
     padding: 2rem 0 3rem 0;

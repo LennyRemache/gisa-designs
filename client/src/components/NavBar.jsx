@@ -25,10 +25,6 @@ export default function NavBar() {
               </NavLink>
             ))}
           </div>
-          <div className="navbar-socials">
-            <InstagramIcon />
-            <MailOutlineIcon />
-          </div>
         </nav>
       </div>
       <div className="body-content">
