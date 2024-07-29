@@ -400,7 +400,7 @@
   }
 }
 
-@media only screen and (max-width: 610px) {
+@media only screen and (max-width: 768px) {
   .hero-text-parent {
     background: rgba(255, 247, 204, 0.85);
   }
@@ -416,7 +416,9 @@
   .home-hero img {
     width: 100%;
   }
+}
 
+@media only screen and (max-width: 610px) {
   .home-section-1-desc {
     font-size: 1rem;
   }
