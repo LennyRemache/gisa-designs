@@ -61,9 +61,6 @@ export default function Home() {
             more. Our designers will work to craft the perfect arrangement to
             fit your event needs.
           </div>
-          <Link to="/Services/a-la-carte" className="learn-more-btn">
-            Learn More
-          </Link>
         </div>
       </div>
       <div className="home-section-3">
@@ -72,8 +69,9 @@ export default function Home() {
             <div className="title">Designers Choice</div>
             <div className="info">
               Leave it to the experts.
-              <br /> Our artisans will pick the best, freshest florals available
-              to create a stunning arrangement for you.
+              <br />
+              Our artisans will pick the best, freshest florals available to
+              create a stunning arrangement for you.
             </div>
             <Link to="/Services/a-la-carte" className="learn-more-btn">
               Learn More

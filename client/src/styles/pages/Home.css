@@ -244,6 +244,7 @@
 }
 
 .home-section-4 {
+  border: 0px solid red;
   width: 100%;
   padding: 4rem 0 5rem 0;
   background-color: hsla(51, 100%, 90%, 0.7);
@@ -279,4 +280,203 @@
   object-fit: cover;
   max-width: 250px;
   width: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .hero-text-brand {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-text-service {
+    font-size: 1.2rem;
+    border: 0px solid red;
+  }
+
+  .hero-text-quote {
+    font-size: 1rem;
+    padding: 1.5rem;
+    line-height: 1.5rem;
+  }
+  .seperator {
+    border: 0px solid red;
+    padding: 2rem 0 3rem 0;
+  }
+
+  .home-section-1 {
+    border: 0px solid green;
+    padding-bottom: 1.5rem;
+  }
+
+  .home-section-1-desc {
+    padding: 0rem 0 1.5rem 0;
+    margin: 0 0.5rem;
+  }
+
+  .home-section-1-photos {
+    border: 0px solid red;
+    padding: 0 0.5rem;
+  }
+
+  .home-section-1-photos img:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+
+  .home-section-2 {
+    border: 0px solid red;
+    padding: 1.5rem 1rem;
+  }
+
+  .home-section-2 img {
+    margin: 0;
+    width: 50%;
+  }
+
+  .home-section-2-desc {
+    border: 0px solid blue;
+  }
+
+  .home-section-2-desc .title {
+    padding: 1rem 0 0 0;
+    font-size: 2rem;
+  }
+
+  .home-section-2-desc .info {
+    padding: 0.75rem 0;
+  }
+
+  .home-section-3 {
+    border: 0px solid blue;
+    padding: 1.5rem 1rem;
+  }
+
+  .home-section-3 .sub-container {
+    border: 0px solid blue;
+    padding: 0.5rem 0.5rem;
+  }
+
+  .home-section-3-desc {
+    border: 0px solid green;
+    width: 50%;
+  }
+
+  .home-section-3-desc .title {
+    border: 0px solid red;
+    font-size: 2rem;
+  }
+
+  .home-section-3-desc .info {
+    border: 0px solid red;
+
+    padding: 0.75rem 0rem;
+  }
+
+  .home-section-3 .sub-container img {
+    border: 0px solid blue;
+    width: 50%;
+    margin: 0rem 0rem 0 0;
+  }
+
+  .learn-more-btn {
+    font-size: 1.25rem;
+  }
+
+  .social-media div {
+    font-size: 1.5rem;
+    margin-left: 0rem;
+  }
+
+  .home-section-4-photos {
+    border: 0px solid blue;
+    display: flex;
+    justify-content: center;
+  }
+
+  .home-section-4-photos a {
+    border: 0px solid green;
+    margin: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 610px) {
+  .hero-text-parent {
+    background: rgba(255, 247, 204, 0.85);
+  }
+  .hero-text {
+    border: 0px solid red;
+    width: 100%;
+  }
+
+  .hero-text-brand {
+    font-size: 1.5rem;
+  }
+
+  .home-hero img {
+    width: 100%;
+  }
+
+  .home-section-1-desc {
+    font-size: 1rem;
+  }
+
+  .home-section-2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-section-2 img {
+    margin: 0;
+    width: 100%;
+  }
+
+  .home-section-2-desc {
+    border: 0px solid blue;
+    align-items: center;
+    margin: 0rem;
+  }
+
+  .home-section-2-desc .title {
+    font-size: 1.5rem;
+  }
+  .home-section-2-desc .info {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .home-section-3 {
+    display: block;
+    padding: 1.5rem 1rem;
+  }
+
+  .home-section-3 .sub-container {
+    border: 0px solid blue;
+    display: block;
+    padding: 0 0.5rem;
+  }
+
+  .home-section-3-desc {
+    border: 0px solid green;
+    width: 100%;
+    align-items: center;
+    padding: 0;
+  }
+
+  .home-section-3-desc .title {
+    padding: 1rem 0 0 0;
+    font-size: 1.5rem;
+  }
+
+  .home-section-3-desc .info {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .home-section-3 .sub-container img {
+    width: 100%;
+    margin: 0.75rem 0rem 0 0;
+  }
+
+  .learn-more-btn {
+    font-size: 1rem;
+  }
 }

@@ -295,7 +295,9 @@ export default function Contact() {
                 onChange={updateContactForm}
               ></textarea>
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit" className="contact-btn">
+              Submit
+            </button>
           </div>
           <div className="form-image">
             <img src={ContactImg} alt="" />
