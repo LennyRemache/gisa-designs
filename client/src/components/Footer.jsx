@@ -10,6 +10,7 @@ export default function Footer({ pages }) {
       <div className="footer">
         <div className="footer-left">
           <img src={Logo} alt="" />
+          <div className="footer-bottom">copyright 2024 Gisa Designs</div>
           <div className="footer-nav">
             {pages.map((page, index) => (
               <NavLink
@@ -27,7 +28,6 @@ export default function Footer({ pages }) {
           <InstagramIcon />
         </div>
       </div>
-      <div className="footer-bottom">copyright 2024 Gisa Designs</div>
     </div>
   );
 }

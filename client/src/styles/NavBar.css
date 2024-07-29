@@ -60,5 +60,5 @@
   min-height: 100vh;
 }
 
-.footer-content {
+@media only screen and (max-width: 600px) {
 }
