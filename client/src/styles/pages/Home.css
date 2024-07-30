@@ -401,6 +401,20 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .home-section-1 {
+    border: 0px solid red;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .home-section-1-photos {
+  }
+
+  .home-section-1-desc {
+    border: 0px solid red;
+    margin-top: 3rem;
+  }
+
   .hero-text-parent {
     background: rgba(255, 247, 204, 0.85);
   }
