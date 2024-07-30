@@ -23,6 +23,7 @@
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   letter-spacing: 0.05rem;
+  text-align: center;
 }
 
 .faq-header-desc {
@@ -115,4 +116,41 @@
 
 .delivery-answer-list-points li:last-child {
   margin: 0 0 2rem 3rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .faq-header-title {
+    font-size: 2.25rem;
+  }
+  .faq {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .faq-nav {
+    display: none;
+    width: 0;
+  }
+
+  .faq-questions {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .service-question,
+  .delivery-question,
+  .payment-question {
+    font-size: 1.2rem;
+  }
+
+  .service-answer,
+  .delivery-answer,
+  .payment-answer {
+    font-size: 1rem;
+  }
 }
