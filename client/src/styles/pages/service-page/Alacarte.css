@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
 }
 
 .a-la-carte-header {
@@ -25,11 +26,18 @@
 }
 
 .a-la-carte-body {
-  border: 0px solid blue;
+  border: 0cqmin solid blue;
   margin: 3rem 0;
+  display: flex;
+}
+
+.carte-items {
+  border: 0px solid red;
+  height: fit-content;
 }
 
 .carte-items ul {
+  border: 0px solid red;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -39,7 +47,6 @@
   border: 0px solid purple;
   margin: 1rem 1rem;
   list-style-type: none;
-  max-width: 400px;
   background: rgb(255, 248, 239);
   max-width: 300px;
   width: 100%;
@@ -50,13 +57,12 @@
 }
 
 .carte-item-img {
-  max-height: 350px;
   border: 0px solid blue;
 }
 
 .carte-item-img img {
   width: 100%;
-  height: 100%;
+  height: 350px;
   display: block;
   object-fit: cover;
 }
@@ -87,4 +93,49 @@
   line-height: 2rem;
   margin-bottom: 2rem;
   letter-spacing: 0.01rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .a-la-carte-container {
+  }
+  .a-la-carte-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .a-la-carte-header p {
+    font-size: 1rem;
+  }
+
+  .carte-item-desc h2 {
+  }
+
+  .carte-item-desc p {
+  }
+
+  .carte-footer {
+    padding: 2rem;
+  }
+
+  .carte-footer p {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 610px) {
+  .a-la-carte-header {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .carte-items ul {
+    border: 0px solid red;
+  }
+  .carte-carousel {
+  }
+
+  .carte-items {
+    width: 225px;
+    border: 0px solid red;
+  }
 }
