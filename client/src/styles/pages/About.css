@@ -40,9 +40,11 @@
 .about-self-images div img {
   object-fit: cover;
   object-position: bottom;
-  width: 360px;
+  max-width: 360px;
+  width: 100%;
   height: 360px;
   display: block;
+  border: 0px solid red;
 }
 
 .about-self-images div {
@@ -143,4 +145,78 @@
   object-position: center;
   width: 100%;
   height: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .about-header-title {
+    font-size: 2.25rem;
+  }
+
+  .about-header p {
+    font-size: 1rem;
+  }
+
+  .creative-desc h2,
+  .cinema-desc h2 {
+    border: 0px solid red;
+    font-size: 1.5rem;
+  }
+
+  .creative-desc p,
+  .cinema-desc p {
+    border: 0px solid red;
+    font-size: 1rem;
+  }
+
+  .creative-img,
+  .cinema-img {
+    height: 400px;
+  }
+}
+
+@media only screen and (max-width: 610px) {
+  .about-section-1 {
+    border: 0px solid red;
+    flex-direction: column;
+  }
+
+  .creative-desc h2 {
+    text-align: center;
+  }
+
+  .creative-img {
+    width: 100%;
+    margin: 0;
+  }
+
+  .creative-desc {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .about-section-2 {
+    flex-direction: column;
+  }
+
+  .cinema-img {
+    width: 100%;
+    margin: 0;
+  }
+
+  .cinema-desc {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .about-self-images div img {
+    height: 300px;
+  }
+
+  .creative-img,
+  .cinema-img {
+    height: 300px;
+  }
 }
