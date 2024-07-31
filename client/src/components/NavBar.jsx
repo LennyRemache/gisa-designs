@@ -4,9 +4,11 @@ import "../styles/NavBar.css";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import Footer from "./Footer";
+import MenuIcon from "@mui/icons-material/Menu";
 
 export default function NavBar() {
   const pages = ["", "Services", "About", "Contact", "FAQ"];
+
   return (
     <>
       <div className="navbar-parent">
@@ -24,6 +26,9 @@ export default function NavBar() {
                 {page === "" ? "Home" : page}
               </NavLink>
             ))}
+          </div>
+          <div className="mobile-navbar">
+            <MenuIcon />
           </div>
         </nav>
       </div>
