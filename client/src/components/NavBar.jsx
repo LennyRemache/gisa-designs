@@ -27,9 +27,6 @@ export default function NavBar() {
               </NavLink>
             ))}
           </div>
-          <div className="mobile-navbar">
-            <MenuIcon />
-          </div>
         </nav>
       </div>
       <div className="body-content">
