@@ -21,5 +21,4 @@ const orderSchema = new mongoose.Schema(
   { collection: "request", timestamps: true }
 );
 
-const connection = mongoose.createConnection(`${process.env.MONGO_URL}orders`);
-export const Order = connection.model("Request", orderSchema);
+export const Order = mongoose.model("Request", orderSchema);
