@@ -87,7 +87,7 @@ export default function Contact() {
     try {
       await validationSchema.validate(contactForm, { abortEarly: false });
       await axios
-        .post("https://gisa-designs.onrender.com/contact/request", contactForm)
+        .post("https://gisa-designs.onrender.com/order/request", contactForm)
         .catch((err) => {
           console.log(err.response.data.err);
         });
