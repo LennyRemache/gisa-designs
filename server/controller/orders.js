@@ -55,7 +55,14 @@ export const request = async (req, res) => {
       from: "lenny.j.remache@gmail.com",
       to: "lenny.j.remache@gmail.com",
       subject: `Order Request #${savedOrder._id}`,
-      text: "This is a test email sent from a Node.js app!",
+      html: `<p>Name: ${savedOrder.firstName} ${savedOrder.lastName}</p>
+             <p>Email: ${savedOrder.email}</p>
+             <p>Phone: ${savedOrder.phone}</p>
+             <p>Address: ${savedOrder.address} ${savedOrder.city}, ${savedOrder.state} ${savedOrder.zip}</p>
+             <p>Requested Date: ${savedOrder.date}</p>
+             <p>Budget: ${savedOrder.budget}</p>
+             <p>Pinterest: ${savedOrder.link}</p>
+             <p>${savedOrder.message}</p>`,
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
