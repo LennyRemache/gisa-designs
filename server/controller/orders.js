@@ -61,8 +61,9 @@ export const request = async (req, res) => {
              <p>Address: ${savedOrder.address} ${savedOrder.city}, ${savedOrder.state} ${savedOrder.zip}</p>
              <p>Requested Date: ${savedOrder.date}</p>
              <p>Budget: ${savedOrder.budget}</p>
+             <p>Services: ${savedOrder.services}</p>
              <p>Pinterest: ${savedOrder.link}</p>
-             <p>${savedOrder.message}</p>`,
+             <p>Message: ${savedOrder.message}</p>`,
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
