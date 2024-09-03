@@ -181,9 +181,9 @@ export default function Contact() {
                 <div className={service.name} key={index}>
                   <input
                     type="checkbox"
-                    name={service.name}
+                    name={service.title}
                     id="services"
-                    checked={contactForm.services.includes(`${service.name}`)}
+                    checked={contactForm.services.includes(`${service.title}`)}
                     onChange={updateContactForm}
                   />
                   <p>{service.title}</p>
