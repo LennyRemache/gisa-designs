@@ -3,8 +3,11 @@ import ContactImg from "../../assets/contact-us-image.jpeg";
 import "../../styles/pages/Contact.css";
 import * as Yup from "yup";
 import axios from "axios";
+import updatePageTitle from "./helpers/pageTitle";
 
 export default function Contact() {
+  updatePageTitle("Contact");
+
   const today = new Date();
 
   const services = [

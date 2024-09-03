@@ -11,7 +11,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import updatePageTitle from "../helpers/pageTitle";
+
 export default function Alacarte() {
+  updatePageTitle("A La Carte Menu");
+
   const settings = {
     arrows: false,
     dots: true,

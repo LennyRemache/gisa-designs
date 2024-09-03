@@ -1,7 +1,9 @@
 import { NavLink } from "react-router-dom";
 import "../../styles/pages/FAQ.css";
+import updatePageTitle from "./helpers/pageTitle";
 
 export default function FAQ() {
+  updatePageTitle("FAQ");
   return (
     <>
       <div className="faq-parent">

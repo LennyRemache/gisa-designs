@@ -11,7 +11,11 @@ import EventDesign2 from "../../assets/event-design-2.jpeg";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { Link } from "react-router-dom";
 
+import updatePageTitle from "./helpers/pageTitle";
+
 export default function Home() {
+  updatePageTitle();
+
   const section_one = [FlowerDesign1, FlowerDesign2, EventDesign1];
   const section_four = [
     [FlowerDesign4, "https://www.instagram.com/p/CsXBgxzuhfr/"],

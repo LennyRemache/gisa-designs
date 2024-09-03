@@ -3,8 +3,10 @@ import SelfImageOne from "../../assets/self-image-1.jpeg";
 import SelfImageTwo from "../../assets/self-image-2.jpeg";
 import DesignImg from "../../assets/about-section-1.jpeg";
 import CinemaImg from "../../assets/about-section-2.jpeg";
+import updatePageTitle from "./helpers/pageTitle";
 
 export default function About() {
+  updatePageTitle("About");
   return (
     <div className="about-parent">
       <div className="about-header">
