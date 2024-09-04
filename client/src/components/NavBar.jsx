@@ -11,8 +11,8 @@ export default function NavBar() {
   const pages = ["", "Services", "About", "Contact", "FAQ"];
 
   const [isOpen, setOpen] = useState(false);
-  function handleMenu() {
-    setOpen(!isOpen);
+  function handleMenuNav() {
+    setOpen(false);
   }
 
   return (
@@ -37,7 +37,7 @@ export default function NavBar() {
       </div>
       <div className="mobile-menu">
         <nav>
-          <NavLink to="/" className="navbar-logo" onClick={handleMenu}>
+          <NavLink to="/" className="navbar-logo" onClick={handleMenuNav}>
             <img src={Logo} alt="test" />
           </NavLink>
           {isOpen && (
@@ -47,7 +47,7 @@ export default function NavBar() {
                   key={index}
                   to={page === "Services" ? `/Services/a-la-carte` : `/${page}`}
                   className="navbar-link"
-                  onClick={handleMenu}
+                  onClick={handleMenuNav}
                 >
                   {page === "" ? "Home" : page}
                 </NavLink>
