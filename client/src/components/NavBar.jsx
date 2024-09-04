@@ -68,6 +68,7 @@ export default function NavBar() {
               }}
               hideOutline={false}
               size={25}
+              duration={0.25}
             />
           </div>
         </nav>
