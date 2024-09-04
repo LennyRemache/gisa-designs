@@ -11,6 +11,9 @@ export default function NavBar() {
   const pages = ["", "Services", "About", "Contact", "FAQ"];
 
   const [isOpen, setOpen] = useState(false);
+  function handleMenu() {
+    setOpen(!isOpen);
+  }
 
   return (
     <>
@@ -34,7 +37,7 @@ export default function NavBar() {
       </div>
       <div className="mobile-menu">
         <nav>
-          <NavLink to="/" className="navbar-logo">
+          <NavLink to="/" className="navbar-logo" onClick={handleMenu}>
             <img src={Logo} alt="test" />
           </NavLink>
           {isOpen && (
@@ -44,25 +47,28 @@ export default function NavBar() {
                   key={index}
                   to={page === "Services" ? `/Services/a-la-carte` : `/${page}`}
                   className="navbar-link"
+                  onClick={handleMenu}
                 >
                   {page === "" ? "Home" : page}
                 </NavLink>
               ))}
             </div>
           )}
-          <Hamburger
-            toggled={isOpen}
-            toggle={setOpen}
-            onToggle={(toggled) => {
-              if (toggled === true) {
-                document.body.style.overflow = "hidden";
-              } else {
-                document.body.style.overflow = "visible";
-              }
-            }}
-            hideOutline={false}
-            size={25}
-          />{" "}
+          <div className="hamburger">
+            <Hamburger
+              toggled={isOpen}
+              toggle={setOpen}
+              onToggle={(toggled) => {
+                if (toggled === true) {
+                  document.body.style.overflow = "hidden";
+                } else {
+                  document.body.style.overflow = "visible";
+                }
+              }}
+              hideOutline={false}
+              size={25}
+            />
+          </div>
         </nav>
       </div>
       <div className="body-content">
