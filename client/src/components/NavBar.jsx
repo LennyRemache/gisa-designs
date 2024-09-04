@@ -4,10 +4,13 @@ import "../styles/NavBar.css";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import Footer from "./Footer";
-import MenuIcon from "@mui/icons-material/Menu";
+import { Squeeze as Hamburger } from "hamburger-react";
+import { useState } from "react";
 
 export default function NavBar() {
   const pages = ["", "Services", "About", "Contact", "FAQ"];
+
+  const [isOpen, setOpen] = useState(false);
 
   return (
     <>
@@ -27,6 +30,39 @@ export default function NavBar() {
               </NavLink>
             ))}
           </div>
+        </nav>
+      </div>
+      <div className="mobile-menu">
+        <nav>
+          <NavLink to="/" className="navbar-logo">
+            <img src={Logo} alt="test" />
+          </NavLink>
+          {isOpen && (
+            <div className="navbar-links">
+              {pages.map((page, index) => (
+                <NavLink
+                  key={index}
+                  to={page === "Services" ? `/Services/a-la-carte` : `/${page}`}
+                  className="navbar-link"
+                >
+                  {page === "" ? "Home" : page}
+                </NavLink>
+              ))}
+            </div>
+          )}
+          <Hamburger
+            toggled={isOpen}
+            toggle={setOpen}
+            onToggle={(toggled) => {
+              if (toggled === true) {
+                document.body.style.overflow = "hidden";
+              } else {
+                document.body.style.overflow = "visible";
+              }
+            }}
+            hideOutline={false}
+            size={25}
+          />{" "}
         </nav>
       </div>
       <div className="body-content">
