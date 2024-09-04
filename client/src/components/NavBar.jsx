@@ -13,6 +13,7 @@ export default function NavBar() {
   const [isOpen, setOpen] = useState(false);
   function handleMenuNav() {
     setOpen(false);
+    document.body.style.overflow = "visible";
   }
 
   return (
