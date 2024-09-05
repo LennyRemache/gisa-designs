@@ -110,4 +110,17 @@
     justify-content: center;
     align-items: center;
   }
+
+  .navbar-link-motion {
+    border: 0px solid blue;
+    width: 100px;
+    margin-bottom: 1rem;
+  }
+
+  .navbar-link {
+    display: flex;
+    justify-content: center;
+    border: 0px solid red;
+    font-size: 18px;
+  }
 }

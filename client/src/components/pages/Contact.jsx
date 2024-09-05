@@ -124,7 +124,7 @@ export default function Contact() {
         <p>
           We're here to collaborate with you every step of the way. Get in touch
           with us today to start blooming ideas together and create an
-          unforgettable experience!t
+          unforgettable experience!
         </p>
       </div>
       <div className="form-parent">
