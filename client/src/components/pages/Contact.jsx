@@ -133,7 +133,7 @@ export default function Contact() {
             <div className="contact-loader">
               <Loading />
             </div>
-          ) : true ? (
+          ) : formSuccess ? (
             <div className="contact-success">
               <ContactSuccess />
             </div>
