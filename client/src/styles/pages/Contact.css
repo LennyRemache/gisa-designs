@@ -324,5 +324,7 @@
   .contact-loader,
   .contact-success {
     width: 100%;
+    min-height: 600px;
+    height: 100%;
   }
 }
