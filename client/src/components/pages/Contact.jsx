@@ -4,6 +4,8 @@ import "../../styles/pages/Contact.css";
 import * as Yup from "yup";
 import axios from "axios";
 import updatePageTitle from "./helpers/pageTitle";
+import Loading from "../Loading";
+import ContactSuccess from "./ContactSuccess";
 
 export default function Contact() {
   updatePageTitle("Contact");
@@ -85,16 +87,23 @@ export default function Contact() {
     message: Yup.string().required("Message is required."),
   });
 
+  const [isLoading, setIsLoading] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await validationSchema.validate(contactForm, { abortEarly: false });
+      setIsLoading(true);
       await axios
         .post("https://gisa-designs.onrender.com/order/request", contactForm)
         .catch((err) => {
           console.log(err.response.data.err);
         });
-      console.log("Form submitted", contactForm);
+      setContactForm(initialContactForm);
+      setFormSuccess(true);
+      setTimeout(() => {
+        console.log("Form submitted", contactForm);
+        setIsLoading(false);
+      }, 3000);
     } catch (error) {
       const newError = {};
       error.inner.forEach((err) => {
@@ -104,6 +113,8 @@ export default function Contact() {
       setErrors(newError);
     }
   };
+
+  const [formSuccess, setFormSuccess] = useState(false);
 
   return (
     <div className="page-parent">
@@ -118,190 +129,206 @@ export default function Contact() {
       </div>
       <div className="form-parent">
         <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="form-details">
-            <div className="name-parent">
-              <p>Name</p>
-              <div className="name">
-                <div className="first-name">
-                  <label htmlFor="firstName">First Name</label>
+          {isLoading ? (
+            <div className="contact-loader">
+              <Loading />
+            </div>
+          ) : true ? (
+            <div className="contact-success">
+              <ContactSuccess />
+            </div>
+          ) : (
+            <div className="form-details">
+              <div className="name-parent">
+                <p>Name</p>
+                <div className="name">
+                  <div className="first-name">
+                    <label htmlFor="firstName">First Name</label>
+                    <input
+                      type="text"
+                      name="firstName"
+                      value={contactForm.firstName}
+                      onChange={updateContactForm}
+                    />
+                    {errors.firstName && (
+                      <div className="error">{errors.firstName}</div>
+                    )}
+                  </div>
+                  <div className="last-name">
+                    <label htmlFor="lastName">Last Name</label>
+                    <input
+                      type="text"
+                      name="lastName"
+                      value={contactForm.lastName}
+                      onChange={updateContactForm}
+                    />
+                    {errors.lastName && (
+                      <div className="error">{errors.lastName}</div>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <div className="email-phone">
+                <div className="email">
+                  <label htmlFor="email">Email</label>
                   <input
-                    type="text"
-                    name="firstName"
-                    value={contactForm.firstName}
+                    type="email"
+                    name="email"
+                    value={contactForm.email}
                     onChange={updateContactForm}
                   />
-                  {errors.firstName && (
-                    <div className="error">{errors.firstName}</div>
-                  )}
+                  {errors.email && <div className="error">{errors.email}</div>}
                 </div>
-                <div className="last-name">
-                  <label htmlFor="lastName">Last Name</label>
+                <div className="phone">
+                  <label htmlFor="phone">Phone</label>
                   <input
-                    type="text"
-                    name="lastName"
-                    value={contactForm.lastName}
+                    type="tel"
+                    name="phone"
+                    value={contactForm.phone}
                     onChange={updateContactForm}
                   />
-                  {errors.lastName && (
-                    <div className="error">{errors.lastName}</div>
+                  {errors.phone && contactForm.phone && (
+                    <div className="error">{errors.phone}</div>
                   )}
                 </div>
               </div>
-            </div>
-            <div className="email-phone">
-              <div className="email">
-                <label htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={contactForm.email}
-                  onChange={updateContactForm}
-                />
-                {errors.email && <div className="error">{errors.email}</div>}
-              </div>
-              <div className="phone">
-                <label htmlFor="phone">Phone</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={contactForm.phone}
-                  onChange={updateContactForm}
-                />
-                {errors.phone && contactForm.phone && (
-                  <div className="error">{errors.phone}</div>
-                )}
-              </div>
-            </div>
 
-            <div className="services">
-              <label htmlFor="services">
-                What services are you interested in?
-              </label>
-              {errors.services && (
-                <div className="error">{errors.services}</div>
-              )}
-              {services.map((service, index) => (
-                <div className={service.name} key={index}>
+              <div className="services">
+                <label htmlFor="services">
+                  What services are you interested in?
+                </label>
+                {errors.services && (
+                  <div className="error">{errors.services}</div>
+                )}
+                {services.map((service, index) => (
+                  <div className={service.name} key={index}>
+                    <input
+                      type="checkbox"
+                      name={service.title}
+                      id="services"
+                      checked={contactForm.services.includes(
+                        `${service.title}`
+                      )}
+                      onChange={updateContactForm}
+                    />
+                    <p>{service.title}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="date">
+                <label htmlFor="date">
+                  Event Date or Delivery Date (Exact or Estimated)
+                </label>
+                <input
+                  type="date"
+                  name="date"
+                  value={contactForm.date}
+                  onChange={updateContactForm}
+                />
+                {errors.date && <div className="error">{errors.date}</div>}
+              </div>
+              <div className="address">
+                <p>Delivery Location / Event Location</p>
+                <div className="street-address">
+                  <label htmlFor="address">Address Line</label>
+                  {errors.address && (
+                    <div className="error">{errors.address}</div>
+                  )}
                   <input
-                    type="checkbox"
-                    name={service.title}
-                    id="services"
-                    checked={contactForm.services.includes(`${service.title}`)}
+                    type="text"
+                    name="address"
+                    autoComplete="street-address"
+                    value={contactForm.address}
                     onChange={updateContactForm}
                   />
-                  <p>{service.title}</p>
                 </div>
-              ))}
-            </div>
-            <div className="date">
-              <label htmlFor="date">
-                Event Date or Delivery Date (Exact or Estimated)
-              </label>
-              <input
-                type="date"
-                name="date"
-                value={contactForm.date}
-                onChange={updateContactForm}
-              />
-              {errors.date && <div className="error">{errors.date}</div>}
-            </div>
-            <div className="address">
-              <p>Delivery Location / Event Location</p>
-              <div className="street-address">
-                <label htmlFor="address">Address Line</label>
-                {errors.address && (
-                  <div className="error">{errors.address}</div>
-                )}
+                <div className="city-state-zip">
+                  <div>
+                    <label htmlFor="city">City</label>
+                    {errors.city && <div className="error">{errors.city}</div>}
+                    <input
+                      type="text"
+                      name="city"
+                      autoComplete="address-level2"
+                      value={contactForm.city}
+                      onChange={updateContactForm}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="state">State</label>
+                    {errors.state && (
+                      <div className="error">{errors.state}</div>
+                    )}
+                    <input
+                      type="text"
+                      name="state"
+                      autoComplete="address-level1"
+                      value={contactForm.state}
+                      onChange={updateContactForm}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="zip">Zip</label>
+                    {errors.zip && <div className="error">{errors.zip}</div>}
+                    <input
+                      type="text"
+                      name="zip"
+                      autoComplete="postal-code"
+                      value={contactForm.zip}
+                      onChange={updateContactForm}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="budget">
+                <label htmlFor="budget">What is your Budget?</label>
+                <select
+                  name="budget"
+                  value={contactForm.budget}
+                  onChange={updateContactForm}
+                >
+                  <option selected disabled>
+                    -- Select an option --
+                  </option>
+                  <option>{"< $500"}</option>
+                  <option>$500 - $1000</option>
+                  <option>$1000 - $1500</option>
+                  <option>$1500 - $2000</option>
+                  <option>{"> $2000"}</option>
+                </select>
+                {errors.budget && <div className="error">{errors.budget}</div>}
+              </div>
+              <div className="pinterest">
+                <label htmlFor="link">Link to Pinterest</label>
+                <p>
+                  ( If your Pinterest Board is private, please invite us
+                  @gisadesigns )
+                </p>
                 <input
-                  type="text"
-                  name="address"
-                  autoComplete="street-address"
-                  value={contactForm.address}
+                  type="url"
+                  name="link"
+                  value={contactForm.link}
                   onChange={updateContactForm}
                 />
               </div>
-              <div className="city-state-zip">
-                <div>
-                  <label htmlFor="city">City</label>
-                  {errors.city && <div className="error">{errors.city}</div>}
-                  <input
-                    type="text"
-                    name="city"
-                    autoComplete="address-level2"
-                    value={contactForm.city}
-                    onChange={updateContactForm}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="state">State</label>
-                  {errors.state && <div className="error">{errors.state}</div>}
-                  <input
-                    type="text"
-                    name="state"
-                    autoComplete="address-level1"
-                    value={contactForm.state}
-                    onChange={updateContactForm}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="zip">Zip</label>
-                  {errors.zip && <div className="error">{errors.zip}</div>}
-                  <input
-                    type="text"
-                    name="zip"
-                    autoComplete="postal-code"
-                    value={contactForm.zip}
-                    onChange={updateContactForm}
-                  />
-                </div>
+              <div className="message">
+                <label htmlFor="message">Message</label>
+                <p>( Any additional Request or Information? )</p>
+                {errors.message && (
+                  <div className="error">{errors.message}</div>
+                )}
+                <textarea
+                  name="message"
+                  rows="5"
+                  value={contactForm.message}
+                  onChange={updateContactForm}
+                ></textarea>
               </div>
+              <button type="submit" className="contact-btn">
+                Submit
+              </button>
             </div>
-            <div className="budget">
-              <label htmlFor="budget">What is your Budget?</label>
-              <select
-                name="budget"
-                value={contactForm.budget}
-                onChange={updateContactForm}
-              >
-                <option selected disabled>
-                  -- Select an option --
-                </option>
-                <option>{"< $500"}</option>
-                <option>$500 - $1000</option>
-                <option>$1000 - $1500</option>
-                <option>$1500 - $2000</option>
-                <option>{"> $2000"}</option>
-              </select>
-              {errors.budget && <div className="error">{errors.budget}</div>}
-            </div>
-            <div className="pinterest">
-              <label htmlFor="link">Link to Pinterest</label>
-              <p>
-                ( If your Pinterest Board is private, please invite us
-                @gisadesigns )
-              </p>
-              <input
-                type="url"
-                name="link"
-                value={contactForm.link}
-                onChange={updateContactForm}
-              />
-            </div>
-            <div className="message">
-              <label htmlFor="message">Message</label>
-              <p>( Any additional Request or Information? )</p>
-              {errors.message && <div className="error">{errors.message}</div>}
-              <textarea
-                name="message"
-                rows="5"
-                value={contactForm.message}
-                onChange={updateContactForm}
-              ></textarea>
-            </div>
-            <button type="submit" className="contact-btn">
-              Submit
-            </button>
-          </div>
+          )}
           <div className="form-image">
             <img src={ContactImg} alt="" />
           </div>

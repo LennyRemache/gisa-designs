@@ -1,0 +1,24 @@
+.success-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 550px;
+  width: 100%;
+}
+
+.success-text p {
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: normal;
+}
+
+.success-thanks {
+  font-size: 29px;
+  margin: 1rem 0;
+}
+
+.success-desc {
+  margin: 0.5rem 0;
+  font-size: 14px;
+}
