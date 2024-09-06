@@ -62,17 +62,15 @@
 }
 
 .mobile-menu {
-  display: none;
 }
 
 @media only screen and (max-width: 768px) {
   .navbar-parent {
-    display: none;
   }
   .mobile-menu {
     width: 100%;
     background-color: hsla(51, 100%, 90%, 0.7);
-    display: block;
+
     border: 0px solid red;
     padding-top: 5px;
     padding-bottom: 2.5px;

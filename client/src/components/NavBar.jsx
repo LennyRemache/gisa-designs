@@ -8,6 +8,7 @@ import { Squeeze as Hamburger } from "hamburger-react";
 import { useState } from "react";
 import { motion, AnimatePresence, animate } from "framer-motion";
 import { duration } from "@mui/material";
+import useWindowDimensions from "./useWindowDimensions";
 
 export default function NavBar() {
   const pages = ["", "Services", "About", "Contact", "FAQ"];
@@ -17,6 +18,7 @@ export default function NavBar() {
     setOpen(false);
     document.body.style.overflow = "visible";
   }
+  const { height, width } = useWindowDimensions();
 
   const mobileNavVars = {
     preOpen: { opacity: 0 },
@@ -28,83 +30,104 @@ export default function NavBar() {
     open: { opacity: 1, y: 0, transition: { duration: 0.5 } },
     close: { opacity: 0, y: 100, transition: { duration: 1 } },
   };
+
+  const navbarVariants = {
+    enter: { y: 5, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { delay: 0.2, duration: 0.6 } },
+  };
+
   return (
     <>
-      <div className="navbar-parent">
-        <nav className="navbar">
-          <NavLink to="/" className="navbar-logo">
-            <img src={Logo} alt="test" />
-          </NavLink>
-          <div className="navbar-links">
-            {pages.map((page, index) => (
-              <NavLink
-                key={index}
-                to={page === "Services" ? `/Services/a-la-carte` : `/${page}`}
-                className="navbar-link"
-              >
-                {page === "" ? "Home" : page}
-              </NavLink>
-            ))}
-          </div>
-        </nav>
-      </div>
-      <div className="mobile-menu">
-        <nav>
-          <NavLink to="/" className="navbar-logo" onClick={handleMenuNav}>
-            <img src={Logo} alt="test" />
-          </NavLink>{" "}
-          <AnimatePresence>
-            {isOpen && (
-              <motion.div
-                className="navbar-links"
-                initial="preOpen"
-                animate="open"
-                exit="close"
-                variants={mobileNavVars}
-              >
-                {pages.map((page, index) => (
-                  <motion.div
-                    variants={mobileNavLinkVars}
-                    key={index}
-                    className="navbar-link-motion"
-                  >
-                    <NavLink
-                      className="navbar-link"
-                      to={
-                        page === "Services"
-                          ? `/Services/a-la-carte`
-                          : `/${page}`
-                      }
-                      onClick={handleMenuNav}
+      {width > 768 ? (
+        <div className="navbar-parent">
+          <motion.nav
+            className="navbar"
+            initial="enter"
+            animate="visible"
+            variants={navbarVariants}
+          >
+            <NavLink to="/" className="navbar-logo">
+              <img src={Logo} alt="test" />
+            </NavLink>
+
+            <div className="navbar-links">
+              {pages.map((page, index) => (
+                <NavLink
+                  key={index}
+                  to={page === "Services" ? `/Services/a-la-carte` : `/${page}`}
+                  className="navbar-link"
+                >
+                  {page === "" ? "Home" : page}
+                </NavLink>
+              ))}
+            </div>
+          </motion.nav>
+        </div>
+      ) : (
+        <div className="mobile-menu">
+          <motion.nav
+            initial="enter"
+            animate="visible"
+            variants={navbarVariants}
+          >
+            <NavLink to="/" className="navbar-logo" onClick={handleMenuNav}>
+              <img src={Logo} alt="test" />
+            </NavLink>{" "}
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  className="navbar-links"
+                  initial="preOpen"
+                  animate="open"
+                  exit="close"
+                  variants={mobileNavVars}
+                >
+                  {pages.map((page, index) => (
+                    <motion.div
+                      variants={mobileNavLinkVars}
+                      key={index}
+                      className="navbar-link-motion"
                     >
-                      {page === "" ? "Home" : page}
-                    </NavLink>
-                  </motion.div>
-                ))}
-              </motion.div>
-            )}{" "}
-          </AnimatePresence>
-          <div className="hamburger">
-            <Hamburger
-              toggled={isOpen}
-              toggle={setOpen}
-              onToggle={(toggled) => {
-                if (toggled === true) {
-                  document.body.style.overflow = "hidden";
-                } else {
-                  document.body.style.overflow = "visible";
-                }
-              }}
-              hideOutline={false}
-              size={25}
-              duration={0.25}
-            />
-          </div>
-        </nav>
-      </div>
+                      <NavLink
+                        className="navbar-link"
+                        to={
+                          page === "Services"
+                            ? `/Services/a-la-carte`
+                            : `/${page}`
+                        }
+                        onClick={handleMenuNav}
+                      >
+                        {page === "" ? "Home" : page}
+                      </NavLink>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              )}{" "}
+            </AnimatePresence>
+            <div className="hamburger">
+              <Hamburger
+                toggled={isOpen}
+                toggle={setOpen}
+                onToggle={(toggled) => {
+                  if (toggled === true) {
+                    document.body.style.overflow = "hidden";
+                  } else {
+                    document.body.style.overflow = "visible";
+                  }
+                }}
+                hideOutline={false}
+                size={25}
+                duration={0.25}
+              />
+            </div>
+          </motion.nav>
+        </div>
+      )}
+
       <div className="body-content">
         <Outlet />
       </div>
+
       <div className="footer-content">
         <Footer pages={pages} />
       </div>
