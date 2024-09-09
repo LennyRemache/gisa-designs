@@ -58,11 +58,11 @@
 
 .home-hero img {
   border: 0px solid green;
-  transform: scaleX(-1);
+  transform: scaleX(1);
   width: 55%;
+  max-height: 100vh;
   height: 100%;
   object-fit: cover;
-  object-position: center right;
   z-index: -2;
   margin-left: auto;
 }
@@ -117,13 +117,13 @@
   justify-content: center;
   padding: 0 2rem;
   width: 100%;
+  max-height: 400px;
+  height: 100%;
 }
 
 .home-section-1-photos img {
   max-width: 400px;
   width: 33.3%;
-  max-height: 400px;
-  height: 100%;
   object-fit: cover;
 }
 
@@ -137,7 +137,7 @@
   object-position: bottom;
 }
 .home-section-1-photos img:nth-child(3) {
-  object-position: bottom;
+  object-position: 25% 0;
 }
 
 .home-section-2 {
@@ -151,11 +151,12 @@
 
 .home-section-2 img {
   object-fit: cover;
-  max-height: 400px;
+  max-height: 500px;
   height: auto;
-  max-width: 700px;
+  max-width: 500px;
   width: 50%;
   margin-right: 2rem;
+  object-position: 0 50%;
 }
 
 .home-section-2-desc {
