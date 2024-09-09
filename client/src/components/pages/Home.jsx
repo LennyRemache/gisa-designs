@@ -35,12 +35,12 @@ export default function Home() {
 
   const heroBrandVariants = {
     enter: { y: 35, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { delay: 0.2, duration: 0.6 } },
+    visible: { y: 0, opacity: 1, transition: { delay: 0.6, duration: 0.6 } },
   };
 
   const heroServiceVariants = {
     enter: { opacity: 0 },
-    visible: { opacity: 1, transition: { delay: 0.3, duration: 0.5 } },
+    visible: { opacity: 1, transition: { delay: 0.6, duration: 0.5 } },
   };
 
   return (
