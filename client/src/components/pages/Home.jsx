@@ -75,7 +75,7 @@ export default function Home() {
               </motion.div>
             </div>
           </div>
-          <img src={EventDesign3} alt="Hero-Image" />
+          <img src={HeroImage} alt="Hero-Image" />
         </div>
 
         <div className="seperator">Flower Shop in NYC</div>
