@@ -13,42 +13,41 @@ export default function Services() {
     }
   };
 
-  const pageVariants = {
-    enter: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.25 } },
-    exit: { opacity: 0, transition: { duration: 0.25 } },
+  const serviceHeroVariants = {
+    enter: { y: 10, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { delay: 0.6, duration: 0.6 } },
   };
 
   return (
-    <AnimatePresence>
-      <motion.div
-        initial="enter"
-        animate="visible"
-        exit="exit"
-        variants={pageVariants}
-      >
-        <div className="service-header">
-          <div className="service-header-title">Our Services</div>
+    <div>
+      <div className="service-header">
+        <motion.div
+          className="service-header-title"
+          initial="enter"
+          animate="visible"
+          variants={serviceHeroVariants}
+        >
+          Our Services
+        </motion.div>
+      </div>
+      <div className="service-container">
+        <div className="service-body">
+          {sections.length ? (
+            <div className="service-nav">
+              <ul>
+                {sections.map((section, index) => (
+                  <li key={index}>
+                    <NavLink to={`${section}`}>{service(section)}</NavLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            ""
+          )}
+          <Outlet />
         </div>
-        <div className="service-container">
-          <div className="service-body">
-            {sections.length ? (
-              <div className="service-nav">
-                <ul>
-                  {sections.map((section, index) => (
-                    <li key={index}>
-                      <NavLink to={`${section}`}>{service(section)}</NavLink>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : (
-              ""
-            )}
-            <Outlet />
-          </div>
-        </div>
-      </motion.div>
-    </AnimatePresence>
+      </div>
+    </div>
   );
 }

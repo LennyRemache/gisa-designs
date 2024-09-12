@@ -10,8 +10,11 @@ import Option3_2 from "../../../assets/a-la-carte-item-3.2.jpg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { motion, useInView, useAnimation, stagger, delay } from "framer-motion";
 
 import updatePageTitle from "../helpers/pageTitle";
+import { useEffect, useRef } from "react";
+import { duration } from "@mui/material";
 
 export default function Alacarte() {
   updatePageTitle("A La Carte Menu");
@@ -27,31 +30,101 @@ export default function Alacarte() {
     adaptiveHeight: true,
   };
 
+  const serviceHeaderVariants = {
+    enter: { y: 10, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { delay: 0.6, duration: 0.6 } },
+  };
+
+  const serviceDescVariants = {
+    enter: { opacity: 0 },
+    visible: { opacity: 1, transition: { delay: 0.6, duration: 0.5 } },
+  };
+
+  const serviceItemVariant1 = {
+    hidden: { opacity: 0, y: 75 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8 },
+    },
+  };
+
+  const serviceItemVariant2 = {
+    hidden: { opacity: 0, y: 75 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, delay: 0.2 },
+    },
+  };
+
+  const serviceItemVariant3 = {
+    hidden: { opacity: 0, y: 75 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, delay: 0.4 },
+    },
+  };
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+    }
+  }, [isInView]);
+
   return (
     <div className="a-la-carte-container">
       <div className="a-la-carte-header">
-        <h1>A La Carte Menu</h1>
-        <p>
+        <motion.h1
+          initial="enter"
+          animate="visible"
+          variants={serviceHeaderVariants}
+        >
+          A La Carte Menu
+        </motion.h1>
+        <motion.p
+          initial="enter"
+          animate="visible"
+          variants={serviceDescVariants}
+        >
           Welcome to our A La Carte selection, where nature's beauty meets
           budget-friendly choices!
-        </p>
-        <p>
+        </motion.p>
+        <motion.p
+          initial="enter"
+          animate="visible"
+          variants={serviceDescVariants}
+        >
           While you won't be customizing specific designs or flower choices,
           rest assured that our expertly curated seasonal blooms will bring
           charm and elegance to your arrangement. Simply pick your preferred
           color palette, and let us work our magic to create a stunning addition
           to your event.
-        </p>
-        <p>
+        </motion.p>
+        <motion.p
+          initial="enter"
+          animate="visible"
+          variants={serviceDescVariants}
+        >
           Ideal for those seeking both quality and budget-friendly options, our
           a la carte offerings promise a touch of natural splendor without
           breaking the bank.
-        </p>
+        </motion.p>
       </div>
       <div className="a-la-carte-body">
-        <div className="carte-items">
+        <div ref={ref} className="carte-items">
           <ul>
-            <li className="carte-item">
+            <motion.li
+              className="carte-item"
+              initial="hidden"
+              animate={mainControls}
+              variants={serviceItemVariant1}
+            >
               <Slider {...settings} className="carte-carousel">
                 <div className="carte-item-img">
                   <img src={Option1} alt="" srcset="" />
@@ -69,8 +142,13 @@ export default function Alacarte() {
                   Approx. 10-12 inches in diameter.
                 </p>
               </div>
-            </li>
-            <li className="carte-item">
+            </motion.li>
+            <motion.li
+              className="carte-item"
+              initial="hidden"
+              animate={mainControls}
+              variants={serviceItemVariant2}
+            >
               <Slider {...settings} className="carte-carousel">
                 <div className="carte-item-img">
                   <img src={Option2} alt="" srcset="" />
@@ -86,8 +164,13 @@ export default function Alacarte() {
                   flowers. Vase is a rental. Approx. 8-10 inches in diameter.
                 </p>
               </div>
-            </li>
-            <li className="carte-item">
+            </motion.li>
+            <motion.li
+              className="carte-item"
+              initial="hidden"
+              animate={mainControls}
+              variants={serviceItemVariant3}
+            >
               <Slider {...settings} className="carte-carousel">
                 <div className="carte-item-img">
                   <img src={Option3} alt="" srcset="" />
@@ -109,7 +192,7 @@ export default function Alacarte() {
                   Approx. 3-4 inches in diameter.
                 </p>
               </div>
-            </li>
+            </motion.li>
           </ul>
         </div>
       </div>
