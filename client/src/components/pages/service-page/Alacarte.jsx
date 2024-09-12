@@ -45,7 +45,7 @@ export default function Alacarte() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8 },
+      transition: { duration: 0.8, delay: 0.6 },
     },
   };
 
@@ -54,7 +54,7 @@ export default function Alacarte() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, delay: 0.2 },
+      transition: { duration: 0.8, delay: 0.8 },
     },
   };
 
@@ -63,7 +63,7 @@ export default function Alacarte() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, delay: 0.4 },
+      transition: { duration: 0.8, delay: 1 },
     },
   };
 
