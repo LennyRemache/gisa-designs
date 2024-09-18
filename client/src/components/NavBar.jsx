@@ -39,7 +39,10 @@ export default function NavBar() {
   return (
     <>
       {width > 768 ? (
-        <div className="navbar-parent">
+        <div
+          className="navbar-parent"
+          onLoad={(document.body.style.overflow = "visible")}
+        >
           <motion.nav
             className="navbar"
             initial="enter"
@@ -83,6 +86,7 @@ export default function NavBar() {
                   animate="open"
                   exit="close"
                   variants={mobileNavVars}
+                  onLoad={(document.body.style.overflow = "hidden")}
                 >
                   {pages.map((page, index) => (
                     <motion.div
@@ -104,7 +108,7 @@ export default function NavBar() {
                     </motion.div>
                   ))}
                 </motion.div>
-              )}{" "}
+              )}
             </AnimatePresence>
             <div className="hamburger">
               <Hamburger
