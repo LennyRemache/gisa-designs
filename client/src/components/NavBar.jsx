@@ -11,7 +11,7 @@ import { duration } from "@mui/material";
 import useWindowDimensions from "./useWindowDimensions";
 
 export default function NavBar() {
-  const pages = ["", "Services", "About", "Contact", "FAQ"];
+  const pages = ["", "A La Carte", "About", "Contact", "FAQ"];
 
   const [isOpen, setOpen] = useState(false);
   function handleMenuNav() {
@@ -54,7 +54,9 @@ export default function NavBar() {
               {pages.map((page, index) => (
                 <NavLink
                   key={index}
-                  to={page === "Services" ? `/Services/a-la-carte` : `/${page}`}
+                  to={
+                    page === "A La Carte" ? `/Services/a-la-carte` : `/${page}`
+                  }
                   className="navbar-link"
                 >
                   {page === "" ? "Home" : page}

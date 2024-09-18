@@ -83,18 +83,11 @@ export default function Alacarte() {
         <motion.h1
           initial="enter"
           animate="visible"
-          variants={serviceHeaderVariants}
-        >
-          A La Carte Menu
-        </motion.h1>
-        <motion.p
-          initial="enter"
-          animate="visible"
           variants={serviceDescVariants}
         >
           Welcome to our A La Carte selection, where nature's beauty meets
           budget-friendly choices!
-        </motion.p>
+        </motion.h1>
         <motion.p
           initial="enter"
           animate="visible"

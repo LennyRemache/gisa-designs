@@ -7,6 +7,7 @@ import FlowerDesign4 from "../../assets/flower-design-4.jpeg";
 import FlowerDesign5 from "../../assets/flower-design-5.jpeg";
 import FlowerDesign6 from "../../assets/flower-design-6.jpeg";
 import FlowerDesign7 from "../../assets/flower-design-7.jpeg";
+import FlowerDesign8 from "../../assets/flower-design-8.jpg";
 import EventDesign1 from "../../assets/event-design-1.jpeg";
 import EventDesign2 from "../../assets/event-design-2.jpeg";
 import EventDesign3 from "../../assets/event-design-3.jpeg";
@@ -24,7 +25,7 @@ export default function Home() {
   const section_one = [FlowerDesign1, FlowerDesign2, FlowerDesign6];
   const section_four = [
     [FlowerDesign4, "https://www.instagram.com/p/CsXBgxzuhfr/"],
-    [FlowerDesign5, "https://www.instagram.com/p/C2JCjqINjgj/]"],
+    [FlowerDesign8, "https://www.instagram.com/p/C63h5pWNoVf/"],
   ];
 
   const pageVariants = {
@@ -78,13 +79,12 @@ export default function Home() {
           <img src={EventDesign3} alt="Hero-Image" />
         </div>
 
-        <div className="seperator">Flower Shop in NYC</div>
+        <div className="seperator">Floral Studio Based in NYC</div>
         <div className="home-section-1">
           <div className="home-section-1-desc">
-            Gisa Designs is a premier, family-owned flower shop in NYC offering
-            luxury flower delivery, subscription services, and custom
-            arrangements for corporate events, weddings, celebrations, and gift
-            baskets.
+            Creating unique floral arrangements for micro weddings, elopements,
+            and special events, from corporate functions to baby showers. Let me
+            bring a touch of nature's beauty to your special moments.”
           </div>
           <div className="home-section-1-photos">
             {section_one.map((image) => (
@@ -92,8 +92,9 @@ export default function Home() {
             ))}
           </div>
         </div>
+        {/*
         <div className="home-section-2">
-          <img src={FlowerDesign7} alt="" />
+          <img src={FlowerDesign3} alt="" />
           <div className="home-section-2-desc">
             <div className="title">Event Florals</div>
             <div className="info">
@@ -104,21 +105,27 @@ export default function Home() {
             </div>
           </div>
         </div>
+        */}
         <div className="home-section-3">
           <div className="sub-container">
             <div className="home-section-3-desc">
-              <div className="title">Designers Choice</div>
-              <div className="info">
-                Leave it to the experts.
-                <br />
-                Our artisans will pick the best, freshest florals available to
-                create a stunning arrangement for you.
+              <div className="title">
+                Designer’s Touch Meets Your Unique Vision
               </div>
-              <Link to="/Services/a-la-carte" className="learn-more-btn">
+              <div className="info">
+                I blend my floral expertise with your unique vision through a
+                collaborative process. By listening closely to your ideas and
+                inspirations, I work with you to select the perfect flowers,
+                colors, extra design elements, etc. My goal is to use my
+                knowledge to guide you and craft bespoke floral creations that
+                bring your dreams to life with my artistic touch. Together, we
+                create floral designs as unique and memorable as your event.
+              </div>
+              {/*<Link to="/Services/a-la-carte" className="learn-more-btn">
                 Learn More
-              </Link>
+              </Link>*/}
             </div>
-            <img src={FlowerDesign3} alt="" />
+            <img src={FlowerDesign7} alt="" />
           </div>
         </div>
         <div className="home-section-4">

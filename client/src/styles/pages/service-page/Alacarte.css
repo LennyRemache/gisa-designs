@@ -15,10 +15,10 @@
 }
 
 .a-la-carte-header h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   letter-spacing: 0.05rem;
   border: 0px solid red;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .a-la-carte-header p {
@@ -99,7 +99,6 @@
   .a-la-carte-container {
   }
   .a-la-carte-header h1 {
-    font-size: 1.5rem;
   }
 
   .a-la-carte-header p {

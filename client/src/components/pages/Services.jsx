@@ -27,7 +27,7 @@ export default function Services() {
           animate="visible"
           variants={serviceHeroVariants}
         >
-          Our Services
+          A La Carte Menu
         </motion.div>
       </div>
       <div className="service-container">
