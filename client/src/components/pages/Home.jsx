@@ -84,7 +84,7 @@ export default function Home() {
           <div className="home-section-1-desc">
             Creating unique floral arrangements for micro weddings, elopements,
             and special events, from corporate functions to baby showers. Let me
-            bring a touch of nature's beauty to your special moments.”
+            bring a touch of nature's beauty to your special moments.
           </div>
           <div className="home-section-1-photos">
             {section_one.map((image) => (

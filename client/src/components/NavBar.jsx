@@ -97,7 +97,7 @@ export default function NavBar() {
                       <NavLink
                         className="navbar-link"
                         to={
-                          page === "Services"
+                          page === "A La Carte"
                             ? `/Services/a-la-carte`
                             : `/${page}`
                         }
