@@ -7,28 +7,35 @@ import Option2 from "../../../assets/a-la-carte-item-2.1.jpeg";
 import Option2_2 from "../../../assets/a-la-carte-item-2.2.jpeg";
 import Option3 from "../../../assets/a-la-carte-item-3.1.jpg";
 import Option3_2 from "../../../assets/a-la-carte-item-3.2.jpg";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { motion, useInView, useAnimation, stagger, delay } from "framer-motion";
+
+import { motion, delay } from "framer-motion";
 
 import updatePageTitle from "../helpers/pageTitle";
-import { useEffect, useRef } from "react";
-import { duration } from "@mui/material";
+import AlacarteItem from "./AlacarteItem";
 
 export default function Alacarte() {
   updatePageTitle("A La Carte Menu");
 
-  const settings = {
-    arrows: false,
-    dots: true,
-    infinite: false,
-    draggable: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    adaptiveHeight: true,
-  };
+  const items = [
+    {
+      "image-1": Option1,
+      "image-2": Option1_2,
+      title: "Bridal Bouquet — $75",
+      desc: " Bridal Bouquet with a mix of Mid-Range to High-Range flowers. Tied with a ribbon and packaged in glass vase with water.Approx. 10-12 inches in diameter.",
+    },
+    {
+      "image-1": Option2,
+      "image-2": Option2_2,
+      title: "Small Centerpiece — $65",
+      desc: "Beautifully arranged with a mix of Mid-Range to High-Range flowers. Vase is a rental. Approx. 8-10 inches in diameter.",
+    },
+    {
+      "image-1": Option3,
+      "image-2": Option3_2,
+      title: `Bud Vase — $12 ${(<br />)} (Min. Order of 3 Bud Vases)`,
+      desc: "Dainty yet fulfilling design. A mix of Mid-Range to High-Range flowers. Vase is approx. 4-7 inches tall and is a rental. Approx. 3-4 inches in diameter.",
+    },
+  ];
 
   const serviceHeaderVariants = {
     enter: { y: 10, opacity: 0 },
@@ -39,43 +46,6 @@ export default function Alacarte() {
     enter: { opacity: 0 },
     visible: { opacity: 1, transition: { delay: 0.6, duration: 0.5 } },
   };
-
-  const serviceItemVariant1 = {
-    hidden: { opacity: 0, y: 75 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, delay: 0.6 },
-    },
-  };
-
-  const serviceItemVariant2 = {
-    hidden: { opacity: 0, y: 75 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, delay: 0.8 },
-    },
-  };
-
-  const serviceItemVariant3 = {
-    hidden: { opacity: 0, y: 75 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, delay: 1 },
-    },
-  };
-
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const mainControls = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      mainControls.start("visible");
-    }
-  }, [isInView]);
 
   return (
     <div className="a-la-carte-container">
@@ -110,82 +80,11 @@ export default function Alacarte() {
         </motion.p>
       </div>
       <div className="a-la-carte-body">
-        <div ref={ref} className="carte-items">
+        <div className="carte-items">
           <ul>
-            <motion.li
-              className="carte-item"
-              initial="hidden"
-              animate={mainControls}
-              variants={serviceItemVariant1}
-            >
-              <Slider {...settings} className="carte-carousel">
-                <div className="carte-item-img">
-                  <img src={Option1} alt="" srcset="" />
-                </div>
-                <div className="carte-item-img">
-                  <img src={Option1_2} alt="" srcset="" />
-                </div>
-              </Slider>
-
-              <div className="carte-item-desc">
-                <h2>Bridal Bouquet — $75</h2>
-                <p>
-                  Bridal Bouquet with a mix of Mid-Range to High-Range flowers.
-                  Tied with a ribbon and packaged in glass vase with water.
-                  Approx. 10-12 inches in diameter.
-                </p>
-              </div>
-            </motion.li>
-            <motion.li
-              className="carte-item"
-              initial="hidden"
-              animate={mainControls}
-              variants={serviceItemVariant2}
-            >
-              <Slider {...settings} className="carte-carousel">
-                <div className="carte-item-img">
-                  <img src={Option2} alt="" srcset="" />
-                </div>
-                <div className="carte-item-img">
-                  <img src={Option2_2} alt="" srcset="" />
-                </div>
-              </Slider>
-              <div className="carte-item-desc">
-                <h2>Small Centerpiece — $65</h2>
-                <p>
-                  Beautifully arranged with a mix of Mid-Range to High-Range
-                  flowers. Vase is a rental. Approx. 8-10 inches in diameter.
-                </p>
-              </div>
-            </motion.li>
-            <motion.li
-              className="carte-item"
-              initial="hidden"
-              animate={mainControls}
-              variants={serviceItemVariant3}
-            >
-              <Slider {...settings} className="carte-carousel">
-                <div className="carte-item-img">
-                  <img src={Option3} alt="" srcset="" />
-                </div>
-                <div className="carte-item-img">
-                  <img src={Option3_2} alt="" srcset="" />
-                </div>
-              </Slider>
-
-              <div className="carte-item-desc">
-                <h2>
-                  Bud Vase — $12
-                  <br />
-                  (Min. Order of 3 Bud Vases)
-                </h2>
-                <p>
-                  Dainty yet fulfilling design. A mix of Mid-Range to High-Range
-                  flowers. Vase is approx. 4-7 inches tall and is a rental.
-                  Approx. 3-4 inches in diameter.
-                </p>
-              </div>
-            </motion.li>
+            {items.map((item, index) => (
+              <AlacarteItem item={item} key={index} />
+            ))}
           </ul>
         </div>
       </div>
