@@ -44,6 +44,18 @@ export default function Home() {
     visible: { opacity: 1, transition: { delay: 0.6, duration: 0.5 } },
   };
 
+  const sectionOneImgVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (index) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.2 * index,
+        duration: 1,
+      },
+    }),
+  };
+
   return (
     <AnimatePresence>
       <motion.div
@@ -76,10 +88,12 @@ export default function Home() {
               </motion.div>
             </div>
           </div>
+
           <img src={EventDesign3} alt="Hero-Image" />
         </div>
 
         <div className="seperator">Floral Studio Based in NYC</div>
+
         <div className="home-section-1">
           <div className="home-section-1-desc">
             Creating unique floral arrangements for micro weddings, elopements,
@@ -87,11 +101,19 @@ export default function Home() {
             bring a touch of nature's beauty to your special moments.
           </div>
           <div className="home-section-1-photos">
-            {section_one.map((image) => (
-              <img src={image} alt="" />
+            {section_one.map((image, index) => (
+              <motion.img
+                src={image}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={sectionOneImgVariants}
+                custom={index}
+              />
             ))}
           </div>
         </div>
+
         {/*
         <div className="home-section-2">
           <img src={FlowerDesign3} alt="" />
