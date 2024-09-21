@@ -8,10 +8,11 @@ import Option2_2 from "../../../assets/a-la-carte-item-2.2.jpeg";
 import Option3 from "../../../assets/a-la-carte-item-3.1.jpg";
 import Option3_2 from "../../../assets/a-la-carte-item-3.2.jpg";
 
-import { motion, delay } from "framer-motion";
+import { motion, delay, useInView, useAnimation } from "framer-motion";
 
 import updatePageTitle from "../helpers/pageTitle";
 import AlacarteItem from "./AlacarteItem";
+import { useRef, useEffect } from "react";
 
 export default function Alacarte() {
   updatePageTitle("A La Carte Menu");
@@ -47,38 +48,51 @@ export default function Alacarte() {
     visible: { opacity: 1, transition: { delay: 0.6, duration: 0.5 } },
   };
 
+  const footerRef = useRef(null);
+  const isFooterInView = useInView(footerRef, { once: true });
+  const footerControls = useAnimation();
+
+  const footerVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: { delay: 0.2, duration: 0.5 },
+    },
+  };
+
+  useEffect(() => {
+    if (isFooterInView) {
+      footerControls.start("visible");
+    }
+  }, [isFooterInView]);
+
   return (
     <div className="a-la-carte-container">
-      <div className="a-la-carte-header">
-        <motion.h1
-          initial="enter"
-          animate="visible"
-          variants={serviceDescVariants}
-        >
+      <motion.div
+        className="a-la-carte-header"
+        initial="enter"
+        animate="visible"
+        variants={serviceDescVariants}
+      >
+        <h1>
           Welcome to our A La Carte selection, where nature's beauty meets
           budget-friendly choices!
-        </motion.h1>
-        <motion.p
-          initial="enter"
-          animate="visible"
-          variants={serviceDescVariants}
-        >
+        </h1>
+        <p initial="enter" animate="visible" variants={serviceDescVariants}>
           While you won't be customizing specific designs or flower choices,
           rest assured that our expertly curated seasonal blooms will bring
           charm and elegance to your arrangement. Simply pick your preferred
           color palette, and let us work our magic to create a stunning addition
           to your event.
-        </motion.p>
-        <motion.p
-          initial="enter"
-          animate="visible"
-          variants={serviceDescVariants}
-        >
+        </p>
+        <p initial="enter" animate="visible" variants={serviceDescVariants}>
           Ideal for those seeking both quality and budget-friendly options, our
           a la carte offerings promise a touch of natural splendor without
           breaking the bank.
-        </motion.p>
-      </div>
+        </p>
+      </motion.div>
       <div className="a-la-carte-body">
         <div className="carte-items">
           <ul>
@@ -88,7 +102,13 @@ export default function Alacarte() {
           </ul>
         </div>
       </div>
-      <div className="carte-footer">
+      <motion.div
+        className="carte-footer"
+        ref={footerRef}
+        initial="hidden"
+        animate={footerControls}
+        variants={footerVariants}
+      >
         <p>
           Please fill out our <Link to="/Contact">Contact Form </Link> and
           indicate your interest in our A La Carte Menu for your event. In our
@@ -98,7 +118,7 @@ export default function Alacarte() {
           Choice.
         </p>
         <p>We will reach out to answer any questions and confirm your order.</p>
-      </div>
+      </motion.div>
     </div>
   );
 }
