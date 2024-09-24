@@ -40,12 +40,12 @@ export default function Alacarte() {
 
   const serviceHeaderVariants = {
     enter: { y: 10, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { delay: 0.6, duration: 0.6 } },
+    visible: { y: 0, opacity: 1, transition: { delay: 0.2, duration: 0.5 } },
   };
 
   const serviceDescVariants = {
     enter: { opacity: 0 },
-    visible: { opacity: 1, transition: { delay: 0.6, duration: 0.5 } },
+    visible: { opacity: 1, transition: { delay: 0.2, duration: 0.5 } },
   };
 
   const footerRef = useRef(null);
@@ -60,6 +60,15 @@ export default function Alacarte() {
       opacity: 1,
       transition: { delay: 0.2, duration: 0.5 },
     },
+  };
+
+  const serviceItemVariant1 = {
+    hidden: { opacity: 0, y: 75 },
+    visible: (index) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, delay: 0.15 * index },
+    }),
   };
 
   useEffect(() => {
@@ -97,7 +106,15 @@ export default function Alacarte() {
         <div className="carte-items">
           <ul>
             {items.map((item, index) => (
-              <AlacarteItem item={item} key={index} />
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={serviceItemVariant1}
+                custom={index}
+              >
+                <AlacarteItem item={item} key={index} />
+              </motion.div>
             ))}
           </ul>
         </div>

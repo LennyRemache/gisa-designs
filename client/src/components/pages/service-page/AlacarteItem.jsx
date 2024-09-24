@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from "react";
-import { motion, useInView, useAnimation, delay } from "framer-motion";
+import React from "react";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+import "../../../styles/pages/service-page/Alacarte.css";
 
 function AlacarteItem({ item }) {
   const settings = {
@@ -17,33 +18,8 @@ function AlacarteItem({ item }) {
     adaptiveHeight: true,
   };
 
-  const serviceItemVariant1 = {
-    hidden: { opacity: 0, y: 75 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, delay: 0.6 },
-    },
-  };
-
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const mainControls = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      mainControls.start("visible");
-    }
-  }, [isInView]);
-
   return (
-    <motion.li
-      className="carte-item"
-      initial="hidden"
-      animate={mainControls}
-      variants={serviceItemVariant1}
-      ref={ref}
-    >
+    <li className="carte-item">
       <Slider {...settings} className="carte-carousel">
         <div className="carte-item-img">
           <img src={item["image-1"]} alt="" srcSet="" />
@@ -56,7 +32,7 @@ function AlacarteItem({ item }) {
         <h2>{item.title}</h2>
         <p>{item.desc}</p>
       </div>
-    </motion.li>
+    </li>
   );
 }
 
