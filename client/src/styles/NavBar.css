@@ -93,7 +93,7 @@
 
   .navbar-links {
     z-index: 1;
-    border: 1px solid red;
+    border: 0px solid red;
     background-color: hsla(51, 100%, 90%, 1);
     position: absolute;
     width: 100%;
