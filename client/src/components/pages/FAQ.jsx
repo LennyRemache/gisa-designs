@@ -15,18 +15,38 @@ export default function FAQ() {
     visible: () => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, delay: 0.2 },
+      transition: { duration: 0.8, delay: 0.2 },
     }),
   };
+
+  const faqHeroVariants = {
+    enter: { y: 10, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { delay: 0.2, duration: 0.5 } },
+  };
+
   return (
     <>
       <div className="faq-parent">
         <div className="faq-header">
-          <div className="faq-header-title">Frequently Asked Questions</div>
-          <div className="faq-header-desc">
+          <motion.div
+            className="faq-header-title"
+            initial="enter"
+            animate="visible"
+            variants={faqHeroVariants}
+          >
+            Frequently Asked Questions
+          </motion.div>
+          <motion.div
+            className="faq-header-desc"
+            initial="enter"
+            animate="visible"
+            variants={faqHeroVariants}
+          >
             Can't find what you're looking for?&nbsp;
-            <NavLink to="/Contact">Contact Us</NavLink>
-          </div>
+            <NavLink to="/Contact" className="contact-link">
+              Contact Us
+            </NavLink>
+          </motion.div>
         </div>
         <div className="faq-container">
           <div className="faq">
@@ -45,7 +65,15 @@ export default function FAQ() {
             </div>
             <div className="faq-questions">
               <div id="services">
-                <p className="section-title">Services</p>
+                <motion.p
+                  className="section-title"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={faqVariants}
+                >
+                  Services
+                </motion.p>
                 <ul className="section-questions">
                   <motion.div
                     initial="hidden"
@@ -62,7 +90,12 @@ export default function FAQ() {
                       you throughout the process.
                     </p>
                   </motion.div>
-                  <motion.div>
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={faqVariants}
+                  >
                     <li className="service-question">
                       What is your process for inquiries?
                     </li>
@@ -87,7 +120,12 @@ export default function FAQ() {
                       step of the way to create an unforgettable experience.
                     </p>
                   </motion.div>
-                  <motion.div>
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={faqVariants}
+                  >
                     <li className="service-question">
                       What sets your floral and event design services apart from
                       others?
@@ -104,7 +142,12 @@ export default function FAQ() {
                       the essence of our clients and their vision.
                     </p>
                   </motion.div>
-                  <motion.div>
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={faqVariants}
+                  >
                     <li className="service-question">
                       How far in advance should I book your services for my
                       event?
@@ -117,7 +160,12 @@ export default function FAQ() {
                       accommodate your needs.
                     </p>
                   </motion.div>
-                  <motion.div>
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={faqVariants}
+                  >
                     {" "}
                     <li className="service-question">
                       Do you offer setup and teardown services for events?
@@ -129,7 +177,12 @@ export default function FAQ() {
                       take care of the details.
                     </p>
                   </motion.div>
-                  <motion.div>
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={faqVariants}
+                  >
                     <li className="service-question">
                       What types of events do you specialize in?
                     </li>
@@ -142,9 +195,22 @@ export default function FAQ() {
                 </ul>
               </div>
               <div id="delivery">
-                <p className="section-title">Delivery</p>
+                <motion.p
+                  className="section-title"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={faqVariants}
+                >
+                  Delivery
+                </motion.p>
                 <ul className="section-questions">
-                  <motion.div>
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={faqVariants}
+                  >
                     <li className="delivery-question">
                       What areas do you serve for delivery?
                     </li>
@@ -156,7 +222,12 @@ export default function FAQ() {
                       clarification.
                     </p>
                   </motion.div>
-                  <motion.div>
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={faqVariants}
+                  >
                     <li className="delivery-question">
                       How do I care for my flowers?
                     </li>
@@ -189,9 +260,22 @@ export default function FAQ() {
                 </ul>
               </div>
               <div id="payment">
-                <p className="section-title">Payment</p>
+                <motion.p
+                  className="section-title"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={faqVariants}
+                >
+                  Payment
+                </motion.p>
                 <ul className="section-questions">
-                  <motion.div>
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={faqVariants}
+                  >
                     <li className="payment-question">
                       What forms of payment do you accept?
                     </li>

@@ -7,6 +7,8 @@ import updatePageTitle from "./helpers/pageTitle";
 import Loading from "../Loading";
 import ContactSuccess from "./ContactSuccess";
 
+import { motion } from "framer-motion";
+
 export default function Contact() {
   updatePageTitle("Contact");
 
@@ -38,6 +40,11 @@ export default function Contact() {
 
   const [contactForm, setContactForm] = useState(initialContactForm);
   const [errors, setErrors] = useState({});
+
+  const contactHeroVariants = {
+    enter: { y: 10, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { delay: 0.2, duration: 0.5 } },
+  };
 
   const updateContactForm = (e) => {
     if (e.target.id === "services") {
@@ -119,13 +126,30 @@ export default function Contact() {
   return (
     <div className="page-parent">
       <div className="contact-header">
-        <div className="contact-header-title">Contact Us</div>
-        <p>Let's bring your vision to life!</p>
-        <p>
+        <motion.div
+          className="contact-header-title"
+          initial="enter"
+          animate="visible"
+          variants={contactHeroVariants}
+        >
+          Contact Us
+        </motion.div>
+        <motion.p
+          initial="enter"
+          animate="visible"
+          variants={contactHeroVariants}
+        >
+          Let's bring your vision to life!
+        </motion.p>
+        <motion.p
+          initial="enter"
+          animate="visible"
+          variants={contactHeroVariants}
+        >
           We're here to collaborate with you every step of the way. Get in touch
           with us today to start blooming ideas together and create an
           unforgettable experience!
-        </p>
+        </motion.p>
       </div>
       <div className="form-parent">
         <form className="contact-form" onSubmit={handleSubmit}>
@@ -313,7 +337,10 @@ export default function Contact() {
               </div>
               <div className="message">
                 <label htmlFor="message">Message</label>
-                <p>( Any additional Request or Information? )</p>
+                <p>
+                  ( Tell me about a little bit about yourself and your vision.
+                  Additional Request or Information? )
+                </p>
                 {errors.message && (
                   <div className="error">{errors.message}</div>
                 )}

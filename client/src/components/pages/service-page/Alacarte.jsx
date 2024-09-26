@@ -33,7 +33,7 @@ export default function Alacarte() {
     {
       "image-1": Option3,
       "image-2": Option3_2,
-      title: `Bud Vase — $12 ${(<br />)} (Min. Order of 3 Bud Vases)`,
+      title: "Bud Vase — $12 (Min. Order of 3 Bud Vases)",
       desc: "Dainty yet fulfilling design. A mix of Mid-Range to High-Range flowers. Vase is approx. 4-7 inches tall and is a rental. Approx. 3-4 inches in diameter.",
     },
   ];
@@ -127,12 +127,15 @@ export default function Alacarte() {
         variants={footerVariants}
       >
         <p>
-          Please fill out our <Link to="/Contact">Contact Form </Link> and
-          indicate your interest in our A La Carte Menu for your event. In our
-          message box specify which items and quantities you are interested in.
-          Additionally, select one of our three color palette options: Neutral &
-          White Color Palette, Romantic Autumn Color Palette, or Designer's
-          Choice.
+          Please fill out our&nbsp;
+          <Link to="/Contact" className="contact-link">
+            Contact Form
+          </Link>
+          &nbsp;and indicate your interest in our A La Carte Menu for your
+          event. In our message box specify which items and quantities you are
+          interested in. Additionally, select one of our three color palette
+          options: Neutral & White Color Palette, Romantic Autumn Color Palette,
+          or Designer's Choice.
         </p>
         <p>We will reach out to answer any questions and confirm your order.</p>
       </motion.div>

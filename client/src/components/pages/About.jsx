@@ -137,9 +137,10 @@ export default function About() {
               3 are: Twilight, West Side Story, and The Hunger Games.
             </p>
           </div>
+          {/*
           <div className="cinema-img">
             <img src={CinemaImg} alt="" />
-          </div>
+          </div>*/}
         </motion.div>
       </div>
     </div>

@@ -95,6 +95,14 @@
   letter-spacing: 0.01rem;
 }
 
+.contact-link {
+  text-decoration: underline;
+}
+
+.contact-link:hover {
+  color: crimson;
+}
+
 @media only screen and (max-width: 768px) {
   .a-la-carte-container {
   }
