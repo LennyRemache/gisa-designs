@@ -64,8 +64,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .navbar-parent {
-  }
   .mobile-menu {
     width: 100%;
     background-color: hsla(51, 100%, 90%, 0.7);
@@ -76,6 +74,7 @@
     box-shadow: 0px -7px 7px 11px rgba(0, 0, 0, 0.49);
     -webkit-box-shadow: 0px -7px 7px 11px rgba(0, 0, 0, 0.49);
     -moz-box-shadow: 0px -7px 7px 11px rgba(0, 0, 0, 0.49);
+    position: relative;
   }
 
   .mobile-menu nav {
