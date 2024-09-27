@@ -275,13 +275,17 @@
   border: 0px solid green;
   display: flex;
   justify-content: center;
+  max-width: 250px;
+  width: 100%;
   margin: 0 1.5rem;
+
+  zoom: 200%;
 }
 
 .home-section-4-photos img {
+  overflow: hidden;
   border: 0px solid blue;
   object-fit: cover;
-  max-width: 250px;
   width: 100%;
 }
 
